@@ -30,7 +30,7 @@ namespace Customers
         private void InitializeComponent()
         {
             this.mangeCustBtn = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.custAccBtn = new System.Windows.Forms.Button();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
@@ -45,14 +45,15 @@ namespace Customers
             this.mangeCustBtn.UseVisualStyleBackColor = true;
             this.mangeCustBtn.Click += new System.EventHandler(this.mangeCustBtn_Click);
             // 
-            // button1
+            // custAccBtn
             // 
-            this.button1.Location = new System.Drawing.Point(304, 244);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(158, 51);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Manage Accounts";
-            this.button1.UseVisualStyleBackColor = true;
+            this.custAccBtn.Location = new System.Drawing.Point(304, 244);
+            this.custAccBtn.Name = "custAccBtn";
+            this.custAccBtn.Size = new System.Drawing.Size(158, 51);
+            this.custAccBtn.TabIndex = 3;
+            this.custAccBtn.Text = "Customer Accounts";
+            this.custAccBtn.UseVisualStyleBackColor = true;
+            this.custAccBtn.Click += new System.EventHandler(this.custAccBtn_Click);
             // 
             // pictureBox3
             // 
@@ -70,14 +71,14 @@ namespace Customers
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(841, 493);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.custAccBtn);
             this.Controls.Add(this.mangeCustBtn);
             this.Controls.Add(this.pictureBox3);
             this.Name = "Main_Menu";
             this.Text = "Main Menu";
             this.Controls.SetChildIndex(this.pictureBox3, 0);
             this.Controls.SetChildIndex(this.mangeCustBtn, 0);
-            this.Controls.SetChildIndex(this.button1, 0);
+            this.Controls.SetChildIndex(this.custAccBtn, 0);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -87,7 +88,7 @@ namespace Customers
         #endregion
 
         private System.Windows.Forms.Button mangeCustBtn;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button custAccBtn;
         private System.Windows.Forms.PictureBox pictureBox3;
     }
 }

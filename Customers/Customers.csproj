@@ -52,6 +52,12 @@
     <Compile Include="Create_Customer.Designer.cs">
       <DependentUpon>Create_Customer.cs</DependentUpon>
     </Compile>
+    <Compile Include="CustomerAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomerAccount.Designer.cs">
+      <DependentUpon>CustomerAccount.cs</DependentUpon>
+    </Compile>
     <Compile Include="Delete_Customer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -94,6 +100,9 @@
     </Compile>
     <EmbeddedResource Include="Create_Customer.resx">
       <DependentUpon>Create_Customer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerAccount.resx">
+      <DependentUpon>CustomerAccount.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Delete_Customer.resx">
       <DependentUpon>Delete_Customer.cs</DependentUpon>
@@ -150,6 +159,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\customers.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\BIT706_A1_5030521\BIT706_A1_5030521\BIT706_A1_5030521.csproj">
+      <Project>{386FF413-ECAA-4285-9EAC-40E587F3DEC7}</Project>
+      <Name>BIT706_A1_5030521</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

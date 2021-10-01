@@ -23,5 +23,22 @@ namespace Customers
             mm.Show();
             this.Hide();
         }
+
+        //private void button1_Click(object sender, EventArgs e)
+        //{
+
+        //}
+
+        //private void custAcBtn_Click(object sender, EventArgs e)
+        //{
+
+        //}
+
+        private void custAccBtn_Click(object sender, EventArgs e)
+        {
+            CustomerAccount CA = new CustomerAccount();
+            CA.Show();
+            this.Hide();
+        }
     }
 }
