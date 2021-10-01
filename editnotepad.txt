@@ -1,0 +1,37 @@
+namespace Customers
+{
+    public partial class EditCustomer : Customers.BaseForm
+    {
+        Controller control2 = new Controller();
+        public EditCustomer()
+        {
+
+            InitializeComponent();
+            //SetCustInfo();
+        }
+
+
+        //public void SetCustInfo()
+        //{
+        //    Customer selectedCust = control2.GetSelected();
+        //    editFirstNameInputBox2.Text = selectedCust.FirstName;
+        //    editLastNameInputBox2.Text = selectedCust.LastName;
+        //}
+
+        //private void saveCustInfoBtn2_Click(object sender, EventArgs e)
+        //{
+
+        //    Customer selectedCust = control2.GetSelected();
+        //    control2.UpdateCustomer(selectedCust, editFirstNameInputBox2.Text, editLastNameInputBox2.Text);
+        //    SetCustInfo();
+
+        //}
+
+        //private void backBtn_Click(object sender, EventArgs e)
+        //{
+        //    this.Hide();
+        //    MainManage mm = new MainManage();
+        //    mm.ShowDialog();
+        //    this.Close();
+        //}
+    }
