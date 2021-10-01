@@ -27,8 +27,15 @@ namespace Customers
         private void btnManageCustAcc_Click(object sender, EventArgs e)
         {
             this.Close();
-            ManageAccounts MA = new ManageAccounts();
-            MA.Show();
+            AcManagement AM = new AcManagement();
+            AM.Show();
+        }
+
+        private void btn_backmm2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Main_Menu M_M = new Main_Menu();
+            M_M.Show();
         }
     }
 }

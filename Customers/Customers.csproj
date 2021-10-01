@@ -46,6 +46,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AcManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AcManagement.Designer.cs">
+      <DependentUpon>AcManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controller2.cs" />
+    <Compile Include="CreateAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateAccount.Designer.cs">
+      <DependentUpon>CreateAccount.cs</DependentUpon>
+    </Compile>
     <Compile Include="Create_Customer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,6 +111,12 @@
     <Compile Include="View_Customer.Designer.cs">
       <DependentUpon>View_Customer.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AcManagement.resx">
+      <DependentUpon>AcManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreateAccount.resx">
+      <DependentUpon>CreateAccount.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Create_Customer.resx">
       <DependentUpon>Create_Customer.cs</DependentUpon>
     </EmbeddedResource>

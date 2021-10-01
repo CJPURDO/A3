@@ -46,6 +46,7 @@ namespace Customers
             this.btn_backmm2.TabIndex = 11;
             this.btn_backmm2.Text = "<< Return to Main Menu";
             this.btn_backmm2.UseVisualStyleBackColor = false;
+            this.btn_backmm2.Click += new System.EventHandler(this.btn_backmm2_Click);
             // 
             // btn_SearchCustomer2
             // 

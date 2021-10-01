@@ -16,6 +16,7 @@ namespace Customers
     {
 
         static protected Controller control = new Controller();
+        static protected Controller2 control2 = new Controller2();
         
         public BaseForm()
         {
