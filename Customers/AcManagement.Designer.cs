@@ -259,6 +259,7 @@ namespace Customers
             this.searchAccTextBox.TabIndex = 34;
             this.searchAccTextBox.Text = "Enter Account ID...";
             this.searchAccTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.searchAccTextBox.Enter += new System.EventHandler(this.searchAccEnter);
             // 
             // btnViewAcc
             // 

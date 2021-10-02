@@ -88,22 +88,12 @@ namespace Customers
                 }
                 else
                 {
-                    try
-                    {
-                        control2.SetSelected(listSelectAcc.SelectedItem as Account);
-                        control2.AccDeposit(control2.GetSelected(), Convert.ToDouble(amountInputBox.Text));
+                    control2.SetSelected(listSelectAcc.SelectedItem as Account);
+                    control2.AccDeposit(control2.GetSelected(), Convert.ToDouble(amountInputBox.Text));
 
-                        listAccInfo.Items.Insert(0, "\n");
-                        listAccInfo.Items.Insert(0, control2.AccInfo(control2.GetSelected()));
-                        updateReset();
-                    }
-                    //if withdraw fails catch with exception and show message in listbox
-                    catch (FailedWithdrawalException a)
-                    {
-                        listAccInfo.Items.Insert(0, "\n");
-                        listAccInfo.Items.Insert(0, a.Message);
-                        updateReset();
-                    }
+                    listAccInfo.Items.Insert(0, "\n");
+                    listAccInfo.Items.Insert(0, control2.AccInfo(control2.GetSelected()));
+                    updateReset();
                 }
             }
 
@@ -157,7 +147,7 @@ namespace Customers
                 listAccInfo.Items.Insert(0, "Please enter valid amount $");
                 updateReset();
             }
-            
+
         }
 
         private void btnCalcInt_Click(object sender, EventArgs e)
@@ -188,21 +178,21 @@ namespace Customers
         private void clearInfoBtn_Click(object sender, EventArgs e)
         {
             listAccInfo.Items.Clear();
-            amountInputBox.Text = "0.00";
+            updateReset();
         }
 
         private void btnDelAcc_Click(object sender, EventArgs e)
         {
             control2.SetSelected(listSelectAcc.SelectedItem as Account);
             control2.DeleteAccount(control2.GetSelected());
-            accBinding.ResetBindings(false);
+            updateReset();
         }
 
         private void btn_SearchAccount_Click(object sender, EventArgs e)
         {
             if (System.Text.RegularExpressions.Regex.IsMatch(searchAccTextBox.Text, "[^0-9]"))
             {
-                MessageBox.Show("Please enter valid Customer ID.");
+                MessageBox.Show("Please enter valid Account ID.");
                 searchAccTextBox.Text = searchAccTextBox.Text.Remove(searchAccTextBox.Text.Length - 1);
             }
             else
@@ -210,9 +200,15 @@ namespace Customers
                 int input = Convert.ToInt32(searchAccTextBox.Text);
                 var output = control2.SearchAccount(input);
                 listSelectAcc.SelectedItem = output;
-                searchAccTextBox.Text = "Enter Customer ID...";
+                searchAccTextBox.Text = "Enter Account ID...";
             }
         }
+
+        private void searchAccEnter(object sender, EventArgs e)
+        {
+            searchAccTextBox.Clear();
+        }
+
 
 
 
@@ -232,9 +228,6 @@ namespace Customers
 
         }
 
-
-
-
-
+        
     }
 }
