@@ -30,12 +30,11 @@ namespace Customers
         private void InitializeComponent()
         {
             this.btn_backCustAcc = new System.Windows.Forms.Button();
-            this.comboAccount = new System.Windows.Forms.ComboBox();
             this.listAccInfo = new System.Windows.Forms.ListBox();
             this.amountLabel = new System.Windows.Forms.Label();
             this.amountInputBox = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnChkBal = new System.Windows.Forms.Button();
+            this.btnCalcInt = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.clearInfoBtn = new System.Windows.Forms.Button();
             this.addInterestBtn = new System.Windows.Forms.Button();
@@ -44,6 +43,11 @@ namespace Customers
             this.depositBtn = new System.Windows.Forms.Button();
             this.listSelectAcc = new System.Windows.Forms.ListBox();
             this.btnCreateAcc = new System.Windows.Forms.Button();
+            this.btnDelAcc = new System.Windows.Forms.Button();
+            this.btn_SearchAccount = new System.Windows.Forms.Button();
+            this.searchAccTextBox = new System.Windows.Forms.TextBox();
+            this.btnViewAcc = new System.Windows.Forms.Button();
+            this.btnUpdateAcc = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,31 +63,15 @@ namespace Customers
             this.btn_backCustAcc.UseVisualStyleBackColor = false;
             this.btn_backCustAcc.Click += new System.EventHandler(this.btn_backCustAcc_Click);
             // 
-            // comboAccount
-            // 
-            this.comboAccount.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.comboAccount.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboAccount.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.comboAccount.FormattingEnabled = true;
-            this.comboAccount.Items.AddRange(new object[] {
-            "Everyday",
-            "Investment",
-            "Omni"});
-            this.comboAccount.Location = new System.Drawing.Point(14, 146);
-            this.comboAccount.Name = "comboAccount";
-            this.comboAccount.Size = new System.Drawing.Size(240, 32);
-            this.comboAccount.TabIndex = 26;
-            this.comboAccount.Text = "Select Account";
-            // 
             // listAccInfo
             // 
             this.listAccInfo.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listAccInfo.FormattingEnabled = true;
             this.listAccInfo.ItemHeight = 23;
-            this.listAccInfo.Location = new System.Drawing.Point(507, 222);
+            this.listAccInfo.Location = new System.Drawing.Point(354, 222);
             this.listAccInfo.Name = "listAccInfo";
             this.listAccInfo.ScrollAlwaysVisible = true;
-            this.listAccInfo.Size = new System.Drawing.Size(452, 533);
+            this.listAccInfo.Size = new System.Drawing.Size(921, 533);
             this.listAccInfo.TabIndex = 23;
             // 
             // amountLabel
@@ -108,36 +96,38 @@ namespace Customers
             this.amountInputBox.TabIndex = 10;
             this.amountInputBox.Text = "0.00";
             // 
-            // button2
+            // btnChkBal
             // 
-            this.button2.BackColor = System.Drawing.Color.Silver;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(1022, 136);
-            this.button2.Name = "button2";
-            this.button2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.button2.Size = new System.Drawing.Size(188, 85);
-            this.button2.TabIndex = 28;
-            this.button2.Text = "Check Balance";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnChkBal.BackColor = System.Drawing.Color.Silver;
+            this.btnChkBal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnChkBal.Location = new System.Drawing.Point(1292, 136);
+            this.btnChkBal.Name = "btnChkBal";
+            this.btnChkBal.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnChkBal.Size = new System.Drawing.Size(188, 85);
+            this.btnChkBal.TabIndex = 28;
+            this.btnChkBal.Text = "Check Balance";
+            this.btnChkBal.UseVisualStyleBackColor = false;
+            this.btnChkBal.Click += new System.EventHandler(this.btnChkBal_Click);
             // 
-            // button1
+            // btnCalcInt
             // 
-            this.button1.BackColor = System.Drawing.Color.Silver;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(1022, 459);
-            this.button1.Name = "button1";
-            this.button1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.button1.Size = new System.Drawing.Size(188, 85);
-            this.button1.TabIndex = 27;
-            this.button1.Text = "Calculate Interest";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnCalcInt.BackColor = System.Drawing.Color.Silver;
+            this.btnCalcInt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCalcInt.Location = new System.Drawing.Point(1292, 459);
+            this.btnCalcInt.Name = "btnCalcInt";
+            this.btnCalcInt.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnCalcInt.Size = new System.Drawing.Size(188, 85);
+            this.btnCalcInt.TabIndex = 27;
+            this.btnCalcInt.Text = "Calculate Interest";
+            this.btnCalcInt.UseVisualStyleBackColor = false;
+            this.btnCalcInt.Click += new System.EventHandler(this.btnCalcInt_Click);
             // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.White;
             this.groupBox1.Controls.Add(this.amountLabel);
             this.groupBox1.Controls.Add(this.amountInputBox);
-            this.groupBox1.Location = new System.Drawing.Point(662, 30);
+            this.groupBox1.Location = new System.Drawing.Point(917, 30);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(321, 122);
             this.groupBox1.TabIndex = 25;
@@ -147,97 +137,168 @@ namespace Customers
             // 
             this.clearInfoBtn.BackColor = System.Drawing.Color.Silver;
             this.clearInfoBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.clearInfoBtn.Location = new System.Drawing.Point(1022, 670);
+            this.clearInfoBtn.Location = new System.Drawing.Point(1292, 670);
             this.clearInfoBtn.Name = "clearInfoBtn";
             this.clearInfoBtn.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.clearInfoBtn.Size = new System.Drawing.Size(188, 85);
             this.clearInfoBtn.TabIndex = 24;
             this.clearInfoBtn.Text = "Clear";
             this.clearInfoBtn.UseVisualStyleBackColor = false;
+            this.clearInfoBtn.Click += new System.EventHandler(this.clearInfoBtn_Click);
             // 
             // addInterestBtn
             // 
             this.addInterestBtn.BackColor = System.Drawing.Color.Silver;
             this.addInterestBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addInterestBtn.Location = new System.Drawing.Point(1022, 565);
+            this.addInterestBtn.Location = new System.Drawing.Point(1292, 565);
             this.addInterestBtn.Name = "addInterestBtn";
             this.addInterestBtn.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.addInterestBtn.Size = new System.Drawing.Size(188, 85);
             this.addInterestBtn.TabIndex = 22;
             this.addInterestBtn.Text = "Add Interest";
             this.addInterestBtn.UseVisualStyleBackColor = false;
+            this.addInterestBtn.Click += new System.EventHandler(this.addInterestBtn_Click);
             // 
             // accountInfoBtn
             // 
             this.accountInfoBtn.BackColor = System.Drawing.Color.Silver;
             this.accountInfoBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.accountInfoBtn.Location = new System.Drawing.Point(1022, 30);
+            this.accountInfoBtn.Location = new System.Drawing.Point(1292, 30);
             this.accountInfoBtn.Name = "accountInfoBtn";
             this.accountInfoBtn.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.accountInfoBtn.Size = new System.Drawing.Size(188, 85);
             this.accountInfoBtn.TabIndex = 21;
             this.accountInfoBtn.Text = "Account Information";
             this.accountInfoBtn.UseVisualStyleBackColor = false;
+            this.accountInfoBtn.Click += new System.EventHandler(this.accountInfoBtn_Click);
             // 
             // withdrawBtn
             // 
             this.withdrawBtn.BackColor = System.Drawing.Color.Silver;
             this.withdrawBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.withdrawBtn.Location = new System.Drawing.Point(1022, 353);
+            this.withdrawBtn.Location = new System.Drawing.Point(1292, 353);
             this.withdrawBtn.Name = "withdrawBtn";
             this.withdrawBtn.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.withdrawBtn.Size = new System.Drawing.Size(188, 85);
             this.withdrawBtn.TabIndex = 20;
             this.withdrawBtn.Text = "Withdraw";
             this.withdrawBtn.UseVisualStyleBackColor = false;
+            this.withdrawBtn.Click += new System.EventHandler(this.withdrawBtn_Click);
             // 
             // depositBtn
             // 
             this.depositBtn.BackColor = System.Drawing.Color.Silver;
             this.depositBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.depositBtn.Location = new System.Drawing.Point(1022, 245);
+            this.depositBtn.Location = new System.Drawing.Point(1292, 245);
             this.depositBtn.Name = "depositBtn";
             this.depositBtn.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.depositBtn.Size = new System.Drawing.Size(188, 85);
             this.depositBtn.TabIndex = 19;
             this.depositBtn.Text = "Deposit";
             this.depositBtn.UseVisualStyleBackColor = false;
+            this.depositBtn.Click += new System.EventHandler(this.depositBtn_Click);
             // 
             // listSelectAcc
             // 
             this.listSelectAcc.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listSelectAcc.FormattingEnabled = true;
             this.listSelectAcc.ItemHeight = 23;
-            this.listSelectAcc.Location = new System.Drawing.Point(41, 213);
+            this.listSelectAcc.Location = new System.Drawing.Point(14, 213);
             this.listSelectAcc.Name = "listSelectAcc";
             this.listSelectAcc.ScrollAlwaysVisible = true;
-            this.listSelectAcc.Size = new System.Drawing.Size(213, 533);
+            this.listSelectAcc.Size = new System.Drawing.Size(232, 533);
             this.listSelectAcc.TabIndex = 31;
             // 
             // btnCreateAcc
             // 
             this.btnCreateAcc.BackColor = System.Drawing.Color.Silver;
             this.btnCreateAcc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCreateAcc.Location = new System.Drawing.Point(468, 131);
+            this.btnCreateAcc.Location = new System.Drawing.Point(252, 213);
             this.btnCreateAcc.Name = "btnCreateAcc";
             this.btnCreateAcc.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnCreateAcc.Size = new System.Drawing.Size(188, 85);
+            this.btnCreateAcc.Size = new System.Drawing.Size(86, 85);
             this.btnCreateAcc.TabIndex = 32;
             this.btnCreateAcc.Text = "Create Account";
             this.btnCreateAcc.UseVisualStyleBackColor = false;
             this.btnCreateAcc.Click += new System.EventHandler(this.btnCreateAcc_Click);
             // 
+            // btnDelAcc
+            // 
+            this.btnDelAcc.BackColor = System.Drawing.Color.Silver;
+            this.btnDelAcc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelAcc.Location = new System.Drawing.Point(252, 304);
+            this.btnDelAcc.Name = "btnDelAcc";
+            this.btnDelAcc.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnDelAcc.Size = new System.Drawing.Size(86, 85);
+            this.btnDelAcc.TabIndex = 33;
+            this.btnDelAcc.Text = "Delete Account";
+            this.btnDelAcc.UseVisualStyleBackColor = false;
+            this.btnDelAcc.Click += new System.EventHandler(this.btnDelAcc_Click);
+            // 
+            // btn_SearchAccount
+            // 
+            this.btn_SearchAccount.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.btn_SearchAccount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_SearchAccount.Location = new System.Drawing.Point(309, 145);
+            this.btn_SearchAccount.Name = "btn_SearchAccount";
+            this.btn_SearchAccount.Size = new System.Drawing.Size(114, 33);
+            this.btn_SearchAccount.TabIndex = 35;
+            this.btn_SearchAccount.Text = "Search";
+            this.btn_SearchAccount.UseVisualStyleBackColor = false;
+            this.btn_SearchAccount.Click += new System.EventHandler(this.btn_SearchAccount_Click);
+            // 
+            // searchAccTextBox
+            // 
+            this.searchAccTextBox.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.searchAccTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchAccTextBox.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.searchAccTextBox.Location = new System.Drawing.Point(41, 145);
+            this.searchAccTextBox.Multiline = true;
+            this.searchAccTextBox.Name = "searchAccTextBox";
+            this.searchAccTextBox.Size = new System.Drawing.Size(236, 33);
+            this.searchAccTextBox.TabIndex = 34;
+            this.searchAccTextBox.Text = "Enter Account ID...";
+            this.searchAccTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // btnViewAcc
+            // 
+            this.btnViewAcc.BackColor = System.Drawing.Color.Silver;
+            this.btnViewAcc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnViewAcc.Location = new System.Drawing.Point(252, 395);
+            this.btnViewAcc.Name = "btnViewAcc";
+            this.btnViewAcc.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnViewAcc.Size = new System.Drawing.Size(86, 85);
+            this.btnViewAcc.TabIndex = 36;
+            this.btnViewAcc.Text = "View Account";
+            this.btnViewAcc.UseVisualStyleBackColor = false;
+            // 
+            // btnUpdateAcc
+            // 
+            this.btnUpdateAcc.BackColor = System.Drawing.Color.Silver;
+            this.btnUpdateAcc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdateAcc.Location = new System.Drawing.Point(252, 486);
+            this.btnUpdateAcc.Name = "btnUpdateAcc";
+            this.btnUpdateAcc.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnUpdateAcc.Size = new System.Drawing.Size(86, 85);
+            this.btnUpdateAcc.TabIndex = 37;
+            this.btnUpdateAcc.Text = "Update Account";
+            this.btnUpdateAcc.UseVisualStyleBackColor = false;
+            // 
             // AcManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.ClientSize = new System.Drawing.Size(1264, 836);
+            this.ClientSize = new System.Drawing.Size(1493, 836);
+            this.Controls.Add(this.btnUpdateAcc);
+            this.Controls.Add(this.btnViewAcc);
+            this.Controls.Add(this.btn_SearchAccount);
+            this.Controls.Add(this.searchAccTextBox);
+            this.Controls.Add(this.btnDelAcc);
             this.Controls.Add(this.btnCreateAcc);
             this.Controls.Add(this.listSelectAcc);
             this.Controls.Add(this.btn_backCustAcc);
-            this.Controls.Add(this.comboAccount);
             this.Controls.Add(this.listAccInfo);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnChkBal);
+            this.Controls.Add(this.btnCalcInt);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.clearInfoBtn);
             this.Controls.Add(this.addInterestBtn);
@@ -252,28 +313,32 @@ namespace Customers
             this.Controls.SetChildIndex(this.addInterestBtn, 0);
             this.Controls.SetChildIndex(this.clearInfoBtn, 0);
             this.Controls.SetChildIndex(this.groupBox1, 0);
-            this.Controls.SetChildIndex(this.button1, 0);
-            this.Controls.SetChildIndex(this.button2, 0);
+            this.Controls.SetChildIndex(this.btnCalcInt, 0);
+            this.Controls.SetChildIndex(this.btnChkBal, 0);
             this.Controls.SetChildIndex(this.listAccInfo, 0);
-            this.Controls.SetChildIndex(this.comboAccount, 0);
             this.Controls.SetChildIndex(this.btn_backCustAcc, 0);
             this.Controls.SetChildIndex(this.listSelectAcc, 0);
             this.Controls.SetChildIndex(this.btnCreateAcc, 0);
+            this.Controls.SetChildIndex(this.btnDelAcc, 0);
+            this.Controls.SetChildIndex(this.searchAccTextBox, 0);
+            this.Controls.SetChildIndex(this.btn_SearchAccount, 0);
+            this.Controls.SetChildIndex(this.btnViewAcc, 0);
+            this.Controls.SetChildIndex(this.btnUpdateAcc, 0);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.Button btn_backCustAcc;
-        private System.Windows.Forms.ComboBox comboAccount;
         private System.Windows.Forms.ListBox listAccInfo;
         private System.Windows.Forms.Label amountLabel;
         private System.Windows.Forms.TextBox amountInputBox;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnChkBal;
+        private System.Windows.Forms.Button btnCalcInt;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button clearInfoBtn;
         private System.Windows.Forms.Button addInterestBtn;
@@ -282,5 +347,10 @@ namespace Customers
         private System.Windows.Forms.Button depositBtn;
         private System.Windows.Forms.ListBox listSelectAcc;
         private System.Windows.Forms.Button btnCreateAcc;
+        private System.Windows.Forms.Button btnDelAcc;
+        private System.Windows.Forms.Button btn_SearchAccount;
+        private System.Windows.Forms.TextBox searchAccTextBox;
+        private System.Windows.Forms.Button btnViewAcc;
+        private System.Windows.Forms.Button btnUpdateAcc;
     }
 }
