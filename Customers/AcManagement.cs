@@ -11,7 +11,7 @@ namespace Customers
     public partial class AcManagement : BaseForm
     {
 
-        protected BindingSource accBinding = new BindingSource();
+        
 
         string pattern = @"^\-?[0-9]+(?:\.[0-9]{1,2})?$";
         public AcManagement()
@@ -22,7 +22,6 @@ namespace Customers
             control2.CreateAccount("I", 122.33, 10, 2.55, 2);
             control2.CreateAccount("O", 1400.32, 10, 2.55, 5);
 
-            accBinding.DataSource = Controller2.accounts;
             listSelectAcc.DataSource = accBinding;
             listSelectAcc.DisplayMember = "IdTypeBalance";
             listSelectAcc.ValueMember = "Id";
@@ -228,6 +227,11 @@ namespace Customers
 
         }
 
-        
+        private void btnTransfer_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Transfer T = new Transfer();
+            T.Show();
+        }
     }
 }

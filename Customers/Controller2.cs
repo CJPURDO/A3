@@ -11,8 +11,8 @@ namespace Customers
         //Static list of accounts for program-wide storage
         public static List<Account> accounts = new List<Account>();
         public static Account selectedAcc;
-        public static Everyday selectedE;
-        public static Omni selectedO;
+        public static Account selectedAcc2;
+
 
 
         //Set selected account
@@ -21,17 +21,33 @@ namespace Customers
             selectedAcc = acc;         
         }
 
+        public void SetSelected2(Account acc)
+        {
+            selectedAcc2 = acc;
+        }
+
         //Return selected account
         public Account GetSelected()
         {
             return selectedAcc;   
         }
 
-
+        public Account GetSelected2()
+        {
+            return selectedAcc2;
+        }
         //Deposit
         public void AccDeposit(Account selectedAcc, double amount)
         {
             selectedAcc.Deposit(amount);
+        }
+
+
+        //Deposit
+        public void AccTransfer(Account selectedAcc, Account selectedAcc2, double amount)
+        {
+            selectedAcc.Withdraw(amount);
+            selectedAcc2.Deposit(amount);
         }
 
         //Withdraw

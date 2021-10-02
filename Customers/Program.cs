@@ -18,8 +18,9 @@ namespace Customers
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new BaseForm());
             //Application.Run(new MainManage());
-            Application.Run(new AcManagement());
-            //Application.Run(new Main_Menu());
+            //Application.Run(new AcManagement());
+            Application.Run(new Main_Menu());
+            //Application.Run(new CustomerAccount());
 
         }
     }

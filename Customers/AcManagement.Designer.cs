@@ -48,6 +48,7 @@ namespace Customers
             this.searchAccTextBox = new System.Windows.Forms.TextBox();
             this.btnViewAcc = new System.Windows.Forms.Button();
             this.btnUpdateAcc = new System.Windows.Forms.Button();
+            this.btnTransfer = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -285,10 +286,24 @@ namespace Customers
             this.btnUpdateAcc.Text = "Update Account";
             this.btnUpdateAcc.UseVisualStyleBackColor = false;
             // 
+            // btnTransfer
+            // 
+            this.btnTransfer.BackColor = System.Drawing.Color.Silver;
+            this.btnTransfer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTransfer.Location = new System.Drawing.Point(252, 577);
+            this.btnTransfer.Name = "btnTransfer";
+            this.btnTransfer.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnTransfer.Size = new System.Drawing.Size(86, 85);
+            this.btnTransfer.TabIndex = 38;
+            this.btnTransfer.Text = "Bank Transfer";
+            this.btnTransfer.UseVisualStyleBackColor = false;
+            this.btnTransfer.Click += new System.EventHandler(this.btnTransfer_Click);
+            // 
             // AcManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.ClientSize = new System.Drawing.Size(1493, 836);
+            this.Controls.Add(this.btnTransfer);
             this.Controls.Add(this.btnUpdateAcc);
             this.Controls.Add(this.btnViewAcc);
             this.Controls.Add(this.btn_SearchAccount);
@@ -325,6 +340,7 @@ namespace Customers
             this.Controls.SetChildIndex(this.btn_SearchAccount, 0);
             this.Controls.SetChildIndex(this.btnViewAcc, 0);
             this.Controls.SetChildIndex(this.btnUpdateAcc, 0);
+            this.Controls.SetChildIndex(this.btnTransfer, 0);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -353,5 +369,6 @@ namespace Customers
         private System.Windows.Forms.TextBox searchAccTextBox;
         private System.Windows.Forms.Button btnViewAcc;
         private System.Windows.Forms.Button btnUpdateAcc;
+        private System.Windows.Forms.Button btnTransfer;
     }
 }
