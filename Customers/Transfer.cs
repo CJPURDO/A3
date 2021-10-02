@@ -10,6 +10,7 @@ namespace Customers
 {
     public partial class Transfer : Customers.BaseForm
     {
+
         public Transfer()
         {
             InitializeComponent();
@@ -31,23 +32,57 @@ namespace Customers
             AM.Show();
         }
 
-        private void btnAddCust_Click(object sender, EventArgs e)
+        private void Reset()
         {
-            Account from = listFrom.SelectedItem as Account;
-            Account to = listTo.SelectedItem as Account;
-
-            //control2.SetSelected();
-            control2.AccTransfer(from, to, Convert.ToDouble(transferAmount.Text));
-
-
-            control2.SetSelected(listFrom.SelectedItem as Account);
-            control2.SetSelected2(listTo.SelectedItem as Account);
-
-            control2.AccTransfer(control2.GetSelected(), control2.GetSelected2(), Convert.ToDouble(amountInputBox.Text));
-
             accBinding.ResetBindings(false);
             accBinding2.ResetBindings(false);
             transferAmount.Text = "0.00";
         }
+
+        private void btnTransfer_Click(object sender, EventArgs e)
+        {
+            string pattern = @"^\-?[0-9]+(?:\.[0-9]{1,2})?$";
+
+            if (System.Text.RegularExpressions.Regex.IsMatch(transferAmount.Text, pattern))
+            {
+                double amount = Convert.ToDouble(transferAmount.Text);
+                if (amount <= 0)
+                {
+                    MessageBox.Show("Please enter valid amount $");
+                    Reset();
+                }
+                else
+                {
+                    try
+                    {
+                        control2.SetSelected(listFrom.SelectedItem as Account);
+                        control2.SetSelected2(listTo.SelectedItem as Account);
+
+                        control2.AccTransfer(control2.GetSelected(), control2.GetSelected2(), amount);
+                        Reset(); ;
+                    }
+                    //if withdraw fails catch with exception and show message in listbox
+                    catch (FailedWithdrawalException a)
+                    {
+
+                        MessageBox.Show(a.Message);
+                        Reset();
+                    }
+                }
+            }
+
+            else
+            {
+                MessageBox.Show("Please enter valid amount $");
+                Reset();
+            }
+        }
+
     }
+
+
+
+
+
+
 }

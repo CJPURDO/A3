@@ -20,7 +20,7 @@ namespace Customers
             //Application.Run(new MainManage());
             //Application.Run(new AcManagement());
             Application.Run(new Main_Menu());
-            //Application.Run(new CustomerAccount());
+           // Application.Run(new CustomerAccount());
 
         }
     }
