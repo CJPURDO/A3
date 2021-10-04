@@ -19,12 +19,15 @@ namespace Customers
         public MainManage()
         {
             InitializeComponent();
-
+            
             custBinding.DataSource = Controller.customers;
             listCustomers.DataSource = custBinding;
             listCustomers.DisplayMember = "IdFullName";
             listCustomers.ValueMember = "ID";
             searchCustTextBox.SelectionStart = 0;
+
+            
+
         }
 
         private void btnCreateCust_Click(object sender, EventArgs e)

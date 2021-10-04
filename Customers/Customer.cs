@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Customers
 {
     public class Customer
-    {   
+    {
         //Class variables
         private int iD;
         private static int nextID = 1;
@@ -15,6 +16,10 @@ namespace Customers
         private string lastName;
         private string phone;
         private double charge;
+
+        public List<Account> myAccounts = new List<Account>();
+
+        //public List<Account> accounts = new List<Account>();
 
         //get and set property accessors 
         public int ID { get => iD; set => iD = value; }
@@ -38,6 +43,29 @@ namespace Customers
                 return (Charge * 100).ToString() + "%";
             }
         }
+
+        
+
+
+        //public void AddAccount(Account a)
+        //{
+        //    if (myAccounts.Contains(a))
+        //    {
+        //        MessageBox.Show("You have already borrowed this book");
+        //    }
+        //    else
+        //    {
+        //        myAccounts.Add(a);
+        //        a.MyCustomer = this;
+        //    }
+
+
+        //}
+
+
+
+
+
 
 
 

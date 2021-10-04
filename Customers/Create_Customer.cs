@@ -13,7 +13,9 @@ namespace Customers
         public Create_Customer()
         {
             InitializeComponent();
+            //GetControlInstance();
             comboType.SelectedIndex = 0;
+            //Controller.GetControlInstance();
         }
 
         private void btnAddCust_Click(object sender, EventArgs e)

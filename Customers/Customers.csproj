@@ -46,13 +46,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Account.cs" />
     <Compile Include="AcManagement.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AcManagement.Designer.cs">
       <DependentUpon>AcManagement.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controller2.cs" />
     <Compile Include="CreateAccount.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -77,6 +77,9 @@
     <Compile Include="Delete_Customer.Designer.cs">
       <DependentUpon>Delete_Customer.cs</DependentUpon>
     </Compile>
+    <Compile Include="Everyday.cs" />
+    <Compile Include="FailedWithdrawalException.cs" />
+    <Compile Include="Investment.cs" />
     <Compile Include="MainManage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -97,6 +100,7 @@
     <Compile Include="Main_Menu.Designer.cs">
       <DependentUpon>Main_Menu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Omni.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Transfer.cs">
@@ -187,12 +191,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\customers.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\BIT706_A1_5030521\BIT706_A1_5030521\BIT706_A1_5030521.csproj">
-      <Project>{386FF413-ECAA-4285-9EAC-40E587F3DEC7}</Project>
-      <Name>BIT706_A1_5030521</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

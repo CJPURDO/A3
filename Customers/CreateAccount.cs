@@ -14,23 +14,23 @@ namespace Customers
         {
             InitializeComponent();
             comAcc.SelectedIndex = 0;
+            //MessageBox.Show(Controller.selectedCust.FirstName);
+            //inputBal.Text = Controller.selectedCust.FirstName;
         }
 
         private void btnAddAcc_Click(object sender, EventArgs e)
         {
             
-           
+            //control.SetSelected(selectedCust);
+            
 
-
-            control2.CreateAccount(GetAccountType(),
+            control.CreateAccount(Controller.selectedCust, GetAccountType(), 
                                     Convert.ToDouble(inputBal.Text),
                                     Convert.ToDouble(inputInt.Text),
                                     Convert.ToDouble(inputFee.Text),
                                     Convert.ToDouble(inputOver.Text));
 
-
-
-
+            
             this.Close();
             AcManagement mm = new AcManagement();
             mm.ShowDialog();

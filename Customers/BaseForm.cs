@@ -15,17 +15,30 @@ namespace Customers
     public partial class BaseForm : Form
     {
 
-        static protected Controller control = new Controller();
-        static protected Controller2 control2 = new Controller2();
-        protected BindingSource accBinding = new BindingSource();
+        //static public Controller control;
+        //Controller controller = Controller.control;
+        //control.GetControlInstance();
+
+        public static Controller control = Controller.GetControlInstance();
+        
+
+
+        static protected Customer basecustomer = new Customer();
+
+        
+        public BindingSource accBinding = new BindingSource();
         protected BindingSource accBinding2 = new BindingSource();
+
+        
+
         public BaseForm()
         {
             InitializeComponent();
 
+            
 
-            accBinding.DataSource = Controller2.accounts;
-            accBinding2.DataSource = Controller2.accounts;
+            //accBinding.DataSource = selectedCust.myAccounts;
+            // accBinding2.DataSource = selectedCust.myAccounts;
 
 
         }

@@ -15,6 +15,7 @@ namespace Customers
         public Main_Menu()
         {
             InitializeComponent();
+            //Controller.GetControlInstance();
         }
 
         private void mangeCustBtn_Click(object sender, EventArgs e)

@@ -15,13 +15,13 @@ namespace Customers
         {
             InitializeComponent();
 
-            listFrom.DataSource = accBinding;
-            listFrom.DisplayMember = "IdTypeBalance";
-            listFrom.ValueMember = "Id";
+            //listFrom.DataSource = accBinding;
+            //listFrom.DisplayMember = "IdTypeBalance";
+            //listFrom.ValueMember = "Id";
 
-            listTo.DataSource = accBinding2;
-            listTo.DisplayMember = "IdTypeBalance";
-            listTo.ValueMember = "Id";
+            //listTo.DataSource = accBinding2;
+            //listTo.DisplayMember = "IdTypeBalance";
+            //listTo.ValueMember = "Id";
 
         }
 
@@ -34,9 +34,9 @@ namespace Customers
 
         private void Reset()
         {
-            accBinding.ResetBindings(false);
-            accBinding2.ResetBindings(false);
-            transferAmount.Text = "0.00";
+            //accBinding.ResetBindings(false);
+            //accBinding2.ResetBindings(false);
+            //transferAmount.Text = "0.00";
         }
 
         private void btnTransfer_Click(object sender, EventArgs e)
@@ -55,10 +55,10 @@ namespace Customers
                 {
                     try
                     {
-                        control2.SetSelected(listFrom.SelectedItem as Account);
-                        control2.SetSelected2(listTo.SelectedItem as Account);
+                        control.SetAccount(listFrom.SelectedItem as Account);
+                        control.SetAccount2(listTo.SelectedItem as Account);
 
-                        control2.AccTransfer(control2.GetSelected(), control2.GetSelected2(), amount);
+                        control.AccTransfer(control.GetAccount(), control.GetAccount2(), amount);
                         Reset(); ;
                     }
                     //if withdraw fails catch with exception and show message in listbox

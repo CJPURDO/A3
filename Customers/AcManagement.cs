@@ -16,17 +16,67 @@ namespace Customers
         string pattern = @"^\-?[0-9]+(?:\.[0-9]{1,2})?$";
         public AcManagement()
         {
+
+            //Controller.GetControlInstance();
             InitializeComponent();
 
-            control2.CreateAccount("E", 100, 10, 2.55, 0);
-            control2.CreateAccount("I", 122.33, 10, 2.55, 2);
-            control2.CreateAccount("O", 1400.32, 10, 2.55, 5);
+
+
+            //Controller object2 = Controller.GetControlInstance();
+
+            //control.CreateAccount("E", 100, 10, 2.55, 0);
+            //control.CreateAccount("I", 122.33, 10, 2.55, 2);
+            //control.CreateAccount("O", 1400.32, 10, 2.55, 5);
+            //if (Controller.selectedCust.myAccounts.Count < 0)
+            //{
+            //    Controller.selectedCust.myAccounts.Add(new Everyday(100));
+            //}
+            //else 
+                
+            accBinding.DataSource = Controller.selectedCust.myAccounts;
+            accBinding2.DataSource = Controller.selectedCust.myAccounts;
+
+
+
+
+            
+            //listSelectAcc.DataSource = Controller.selectedCust.myAccounts;
+
+
+
 
             listSelectAcc.DataSource = accBinding;
             listSelectAcc.DisplayMember = "IdTypeBalance";
             listSelectAcc.ValueMember = "Id";
-            searchAccTextBox.SelectionStart = 0;
+            //searchAccTextBox.SelectionStart = 0;
+            //searchAccTextBox.Text = Controller.selectedCust.FirstName;
+
+
+
+            Controller.selectedCust.myAccounts.Add(new Everyday(100));
+            Controller.selectedCust.myAccounts.Add(new Investment(22.22, 5, 1));
+            Controller.selectedCust.myAccounts.Add(new Omni(234, 2, 2, 290));
+            //DisplayMyAccount();
+            updateReset();
+
         }
+
+
+        //public void DisplayMyAccount()
+        //{
+        //    listSelectAcc.Items.Clear();
+        //    if (Controller.selectedCust.myAccounts.Count > 0)
+        //        foreach (Account a in Controller.selectedCust.myAccounts)
+        //        {
+        //            listSelectAcc.Items.Add(a.AccountType);
+        //            listSelectAcc.SelectedIndex = 0;
+        //        }
+        //    else Controller.selectedCust.myAccounts = null;
+
+
+        //}
+        
+
 
 
         public void updateReset()
@@ -48,9 +98,9 @@ namespace Customers
             }
             else
             {
-                control2.SetSelected(listSelectAcc.SelectedItem as Account);
+                control.SetAccount(listSelectAcc.SelectedItem as Account);
                 listAccInfo.Items.Insert(0, "\n");
-                listAccInfo.Items.Insert(0, control2.AccInfo(control2.GetSelected()));
+                listAccInfo.Items.Insert(0, control.AccInfo(control.GetAccount()));
             }
         }
 
@@ -63,9 +113,9 @@ namespace Customers
             }
             else
             {
-                control2.SetSelected(listSelectAcc.SelectedItem as Account);
+                control.SetAccount(listSelectAcc.SelectedItem as Account);
                 listAccInfo.Items.Insert(0, "\n");
-                listAccInfo.Items.Insert(0, control2.AccBal(control2.GetSelected()));
+                listAccInfo.Items.Insert(0, control.AccBal(control.GetAccount()));
 
 
             }
@@ -87,11 +137,11 @@ namespace Customers
                 }
                 else
                 {
-                    control2.SetSelected(listSelectAcc.SelectedItem as Account);
-                    control2.AccDeposit(control2.GetSelected(), Convert.ToDouble(amountInputBox.Text));
+                    control.SetAccount(listSelectAcc.SelectedItem as Account);
+                    control.AccDeposit(control.GetAccount(), Convert.ToDouble(amountInputBox.Text));
 
                     listAccInfo.Items.Insert(0, "\n");
-                    listAccInfo.Items.Insert(0, control2.AccInfo(control2.GetSelected()));
+                    listAccInfo.Items.Insert(0, control.AccInfo(control.GetAccount()));
                     updateReset();
                 }
             }
@@ -123,11 +173,11 @@ namespace Customers
                 {
                     try
                     {
-                        control2.SetSelected(listSelectAcc.SelectedItem as Account);
-                        control2.AccWithdraw(control2.GetSelected(), Convert.ToDouble(amountInputBox.Text));
+                        control.SetAccount(listSelectAcc.SelectedItem as Account);
+                        control.AccWithdraw(control.GetAccount(), Convert.ToDouble(amountInputBox.Text));
 
                         listAccInfo.Items.Insert(0, "\n");
-                        listAccInfo.Items.Insert(0, control2.AccInfo(control2.GetSelected()));
+                        listAccInfo.Items.Insert(0, control.AccInfo(control.GetAccount()));
                         updateReset();
                     }
                     //if withdraw fails catch with exception and show message in listbox
@@ -151,20 +201,20 @@ namespace Customers
 
         private void btnCalcInt_Click(object sender, EventArgs e)
         {
-            control2.SetSelected(listSelectAcc.SelectedItem as Account);
-            control2.AccCalcInt(control2.GetSelected());
+            control.SetAccount(listSelectAcc.SelectedItem as Account);
+            control.AccCalcInt(control.GetAccount());
 
             listAccInfo.Items.Insert(0, "\n");
-            listAccInfo.Items.Insert(0, "Interest: $" + control2.GetSelected().CalcInterest());
+            listAccInfo.Items.Insert(0, "Interest: $" + control.GetAccount().CalcInterest());
         }
 
         private void addInterestBtn_Click(object sender, EventArgs e)
         {
-            control2.SetSelected(listSelectAcc.SelectedItem as Account);
-            control2.AccAddInt(control2.GetSelected());
+            control.SetAccount(listSelectAcc.SelectedItem as Account);
+            control.AccAddInt(control.GetAccount());
 
             listAccInfo.Items.Insert(0, "\n");
-            listAccInfo.Items.Insert(0, control2.AccInfo(control2.GetSelected()));
+            listAccInfo.Items.Insert(0, control.AccInfo(control.GetAccount()));
             updateReset();
         }
 
@@ -182,8 +232,8 @@ namespace Customers
 
         private void btnDelAcc_Click(object sender, EventArgs e)
         {
-            control2.SetSelected(listSelectAcc.SelectedItem as Account);
-            control2.DeleteAccount(control2.GetSelected());
+            control.SetAccount(listSelectAcc.SelectedItem as Account);
+            control.DeleteAccount(control.GetAccount());
             updateReset();
         }
 
@@ -197,7 +247,7 @@ namespace Customers
             else
             {
                 int input = Convert.ToInt32(searchAccTextBox.Text);
-                var output = control2.SearchAccount(input);
+                var output = control.SearchAccount(input);
                 listSelectAcc.SelectedItem = output;
                 searchAccTextBox.Text = "Enter Account ID...";
             }
@@ -214,13 +264,14 @@ namespace Customers
         private void btn_backCustAcc_Click(object sender, EventArgs e)
         {
 
-            Main_Menu MM = new Main_Menu();
-            MM.Show();
+            CustomerAccount CA = new CustomerAccount();
+            CA.Show();
             this.Close();
         }
 
         private void btnCreateAcc_Click(object sender, EventArgs e)
         {
+            control.SetSelected(control.GetSelected());
             this.Close();
             CreateAccount CA = new CreateAccount();
             CA.Show();

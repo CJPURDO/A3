@@ -1,5 +1,4 @@
-﻿using BIT706_A1_5030521;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,7 +15,7 @@ namespace Customers
         public CustomerAccount()
         {
             InitializeComponent();
-
+            //control.CreateCustomer("bob", "jones", "022", 0.5);
             custBinding.DataSource = Controller.customers;
             listCustomers2.DataSource = custBinding;
             listCustomers2.DisplayMember = "IdFullName";
@@ -26,6 +25,9 @@ namespace Customers
 
         private void btnManageCustAcc_Click(object sender, EventArgs e)
         {
+
+            control.SetSelected(listCustomers2.SelectedItem as Customer);
+            control.GetSelected();
             this.Close();
             AcManagement AM = new AcManagement();
             AM.Show();
