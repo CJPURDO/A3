@@ -14,14 +14,16 @@ namespace Customers
         public Transfer()
         {
             InitializeComponent();
+            accBinding.DataSource = Controller.selectedCust.myAccounts;
+            accBinding2.DataSource = Controller.selectedCust.myAccounts;
 
-            //listFrom.DataSource = accBinding;
-            //listFrom.DisplayMember = "IdTypeBalance";
-            //listFrom.ValueMember = "Id";
+            listFrom.DataSource = accBinding;
+            listFrom.DisplayMember = "IdTypeBalance";
+            listFrom.ValueMember = "Id";
 
-            //listTo.DataSource = accBinding2;
-            //listTo.DisplayMember = "IdTypeBalance";
-            //listTo.ValueMember = "Id";
+            listTo.DataSource = accBinding2;
+            listTo.DisplayMember = "IdTypeBalance";
+            listTo.ValueMember = "Id";
 
         }
 
@@ -34,9 +36,9 @@ namespace Customers
 
         private void Reset()
         {
-            //accBinding.ResetBindings(false);
-            //accBinding2.ResetBindings(false);
-            //transferAmount.Text = "0.00";
+            accBinding.ResetBindings(false);
+            accBinding2.ResetBindings(false);
+            transferAmount.Text = "0.00";
         }
 
         private void btnTransfer_Click(object sender, EventArgs e)

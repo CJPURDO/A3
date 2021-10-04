@@ -40,8 +40,8 @@ namespace Customers
             this.label5 = new System.Windows.Forms.Label();
             this.listFrom = new System.Windows.Forms.ListBox();
             this.listTo = new System.Windows.Forms.ListBox();
-            //((System.ComponentModel.ISupportInitialize)(this.accBinding)).BeginInit();
-            //((System.ComponentModel.ISupportInitialize)(this.accBinding2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.accBinding)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.accBinding2)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -192,8 +192,8 @@ namespace Customers
             this.Controls.SetChildIndex(this.label5, 0);
             this.Controls.SetChildIndex(this.listFrom, 0);
             this.Controls.SetChildIndex(this.listTo, 0);
-            //((System.ComponentModel.ISupportInitialize)(this.accBinding)).EndInit();
-            //((System.ComponentModel.ISupportInitialize)(this.accBinding2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.accBinding)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.accBinding2)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
