@@ -55,5 +55,9 @@ namespace Customers
             }
         }
 
+        private void Create_Customer_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            control.SaveAll();
+        }
     }
 }

@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 namespace Customers
 {
 
+    [Serializable]
     public class Investment : Account
     {
 

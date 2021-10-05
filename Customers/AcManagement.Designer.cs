@@ -49,6 +49,8 @@ namespace Customers
             this.btnViewAcc = new System.Windows.Forms.Button();
             this.btnUpdateAcc = new System.Windows.Forms.Button();
             this.btnTransfer = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.accBinding)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.accBinding2)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -323,6 +325,7 @@ namespace Customers
             this.Controls.Add(this.depositBtn);
             this.Name = "AcManagement";
             this.Text = "Account Management";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AccManagement_FormClosing);
             this.Controls.SetChildIndex(this.depositBtn, 0);
             this.Controls.SetChildIndex(this.withdrawBtn, 0);
             this.Controls.SetChildIndex(this.accountInfoBtn, 0);
@@ -341,6 +344,8 @@ namespace Customers
             this.Controls.SetChildIndex(this.btnViewAcc, 0);
             this.Controls.SetChildIndex(this.btnUpdateAcc, 0);
             this.Controls.SetChildIndex(this.btnTransfer, 0);
+            ((System.ComponentModel.ISupportInitialize)(this.accBinding)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.accBinding2)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

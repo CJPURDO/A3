@@ -222,5 +222,10 @@ namespace Customers
             Transfer T = new Transfer();
             T.Show();
         }
+
+        private void AccManagement_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            control.SaveAll();
+        }
     }
 }

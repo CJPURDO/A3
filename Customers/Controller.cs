@@ -1,10 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Customers
 {
+    
     public class Controller
     {
         //Static list of customers for program-wide storage
@@ -199,5 +203,103 @@ namespace Customers
             return null;
         }
 
+
+
+
+
+
+
+        // controls for saving data 
+
+        /// <summary>
+        /// Saves Customer Data to file
+        /// </summary>
+        public void WriteBinaryData()
+        {
+            //create a formatting object
+            IFormatter formatter = new BinaryFormatter();
+
+            //Create a new IO stream to write to the file Objects.bin
+            Stream stream = new FileStream("objects.bin", FileMode.Create,
+            FileAccess.Write, FileShare.None);
+
+            //use the formatter to serialize the collection and send it to the filestream
+            formatter.Serialize(stream, customers);
+
+            //close the file
+            stream.Close();
+
+        }
+
+        /// <summary>
+        /// Reads customer data from file, or closes if the file is empty to prevent exception
+        /// </summary>
+        public void ReadBinaryData()
+        {
+
+            IFormatter formatter = new BinaryFormatter();
+            Stream stream = new FileStream("Objects.bin", FileMode.Open, FileAccess.Read,
+            FileShare.Read);
+
+            // if the file is empty, do nothing
+            if (new FileInfo("Objects.bin").Length == 0)
+            {
+                stream.Close();
+            }
+
+            //if the file has data, read it
+            else
+            {
+                Controller.customers = (List<Customer>)formatter.Deserialize(stream);
+                stream.Close();
+
+            }
+        }
+
+
+        //Get the saved value of nextID if there is one
+        /// <summary>
+        /// Get the stored nextID value from file
+        /// </summary>
+        public void setIDinstance()
+        {
+            IFormatter formatter = new BinaryFormatter();
+            Stream stream = new FileStream("Data.bin", FileMode.Open, FileAccess.Read,
+            FileShare.Read);
+
+            SingletonData.setInstance((SingletonData)formatter.Deserialize(stream));
+            stream.Close();
+
+        }
+
+
+        // write the nextID attribute to file by saving the instance of singletondata
+        /// <summary>
+        /// Save the nextID value tofile
+        /// </summary>
+        public void WriteID()
+        {
+            //create a formatting object
+            IFormatter formatter = new BinaryFormatter();
+
+            //Create a new IO stream to write to the file Objects.bin
+            Stream stream = new FileStream("Data.bin", FileMode.Create,
+            FileAccess.Write, FileShare.None);
+
+            //use the formatter to serialize the collection and send it to the filestream
+            formatter.Serialize(stream, SingletonData.getInstance());
+
+            //close the file
+            stream.Close();
+        }
+
+        /// <summary>
+        /// Save all data - used upon closing the app
+        /// </summary>
+        public void SaveAll()
+        {
+            WriteBinaryData();
+            WriteID();
+        }
     }
 }

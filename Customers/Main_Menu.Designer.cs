@@ -32,6 +32,8 @@ namespace Customers
             this.mangeCustBtn = new System.Windows.Forms.Button();
             this.custAccBtn = new System.Windows.Forms.Button();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.accBinding)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.accBinding2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
@@ -76,9 +78,12 @@ namespace Customers
             this.Controls.Add(this.pictureBox3);
             this.Name = "Main_Menu";
             this.Text = "Main Menu";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Main_Menu_FormClosing);
             this.Controls.SetChildIndex(this.pictureBox3, 0);
             this.Controls.SetChildIndex(this.mangeCustBtn, 0);
             this.Controls.SetChildIndex(this.custAccBtn, 0);
+            ((System.ComponentModel.ISupportInitialize)(this.accBinding)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.accBinding2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

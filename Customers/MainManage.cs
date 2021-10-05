@@ -129,8 +129,9 @@ namespace Customers
             M_M.Show();
         }
 
-
-
-
+        private void ManageCust_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            control.SaveAll();
+        }
     }
 }

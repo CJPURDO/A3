@@ -7,11 +7,12 @@ using System.Windows.Forms;
 
 namespace Customers
 {
+    [Serializable]
     public class Customer
     {
         //Class variables
         private int iD;
-        private static int nextID = 1;
+        //private static int nextID = 1;
         private string firstName;
         private string lastName;
         private string phone;
@@ -73,8 +74,10 @@ namespace Customers
         //Constructors 
         public Customer()
         {
-            ID = nextID;
-            nextID++;
+            //ID = nextID;
+            //nextID++;
+
+            ID = SingletonData.NextId;
         }
 
         public Customer(string newFirstName, string newLastName, string newPhone, double newCharge) : this()

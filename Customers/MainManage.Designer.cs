@@ -37,6 +37,8 @@ namespace Customers
             this.btn_SearchCustomer = new System.Windows.Forms.Button();
             this.btn_backmm = new System.Windows.Forms.Button();
             this.btnView = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.accBinding)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.accBinding2)).BeginInit();
             this.SuspendLayout();
             // 
             // listCustomers
@@ -146,6 +148,7 @@ namespace Customers
             this.Controls.Add(this.listCustomers);
             this.Name = "MainManage";
             this.Text = "Manage Customers";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ManageCust_FormClosing);
             this.Controls.SetChildIndex(this.listCustomers, 0);
             this.Controls.SetChildIndex(this.btnCreateCust, 0);
             this.Controls.SetChildIndex(this.editCustomerBtn, 0);
@@ -154,6 +157,8 @@ namespace Customers
             this.Controls.SetChildIndex(this.btn_SearchCustomer, 0);
             this.Controls.SetChildIndex(this.btn_backmm, 0);
             this.Controls.SetChildIndex(this.btnView, 0);
+            ((System.ComponentModel.ISupportInitialize)(this.accBinding)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.accBinding2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

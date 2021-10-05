@@ -23,15 +23,24 @@ namespace Customers
             searchCustTextBox2.SelectionStart = 0;
         }
 
+
+
+
+
+
+
         private void btnManageCustAcc_Click(object sender, EventArgs e)
         {
 
             control.SetSelected(listCustomers2.SelectedItem as Customer);
-            control.GetSelected();
+            
             this.Close();
             AcManagement AM = new AcManagement();
             AM.Show();
         }
+
+
+
 
         private void btn_backmm2_Click(object sender, EventArgs e)
         {

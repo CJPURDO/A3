@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace Customers
 {
@@ -40,6 +41,11 @@ namespace Customers
             CustomerAccount CA = new CustomerAccount();
             CA.Show();
             this.Hide();
+        }
+
+        private void Main_Menu_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            control.SaveAll();
         }
     }
 }

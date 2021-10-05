@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Customers
 {
+    [Serializable]
     public class Omni : Account
     {   
         private double overdraft;

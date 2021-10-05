@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 namespace Customers
 {
     //Abstract class can not be instantiated, only concrete subclasses can be instantiated
+    [Serializable]
     public abstract class Account
     {
         protected static int nextID = 1;

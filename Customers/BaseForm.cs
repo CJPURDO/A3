@@ -16,6 +16,8 @@ namespace Customers
     {
         public static Controller control = Controller.GetControlInstance();
 
+        public static SingletonData instance = SingletonData.getInstance();
+
         static protected Customer basecustomer = new Customer();
 
         
@@ -29,6 +31,7 @@ namespace Customers
         {
             InitializeComponent();
 
+            control.ReadBinaryData();
 
 
             accBinding.DataSource = null;

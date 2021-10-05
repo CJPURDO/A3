@@ -184,6 +184,7 @@ namespace Customers
             this.Controls.Add(this.groupBox1);
             this.Name = "Transfer";
             this.Text = "Transfer Funds";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Transfer_FormClosing);
             this.Controls.SetChildIndex(this.groupBox1, 0);
             this.Controls.SetChildIndex(this.btnTransfer, 0);
             this.Controls.SetChildIndex(this.btnCancel, 0);

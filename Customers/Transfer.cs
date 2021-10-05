@@ -80,6 +80,10 @@ namespace Customers
             }
         }
 
+        private void Transfer_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            control.SaveAll();
+        }
     }
 
 
