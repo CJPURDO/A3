@@ -12,23 +12,48 @@ using System.Collections;
 
 namespace Customers
 {
-    public partial class MainManage : Customers.BaseForm
+    public partial class Manage_Customers : Customers.BaseForm
     {
 
-        protected BindingSource custBinding = new BindingSource();
-        public MainManage()
+        //controller instance
+        Controller control = Controller.GetControlInstance();
+        public Manage_Customers()
         {
             InitializeComponent();
-            
-            custBinding.DataSource = Controller.customers;
-            listCustomers.DataSource = custBinding;
-            listCustomers.DisplayMember = "IdFullName";
-            listCustomers.ValueMember = "ID";
-            searchCustTextBox.SelectionStart = 0;
-
-            
+            DisplayCust();
 
         }
+
+        public void DisplayCust()
+        {
+            listCustomers.Items.Clear();
+            if (Controller.customers.Count == 0)
+            {
+                listCustomers.Items.Add("No Customers to Show");
+            }
+            else
+            {
+                foreach (Customer c in Controller.customers)
+                {
+                    listCustomers.Items.Add(c.ID + " " + c.FirstName + "  " + c.LastName);
+                }
+                listCustomers.SelectedIndex = 0;
+            }
+        }
+
+
+        //select customer object
+        public void GetCustomerObject()
+        {
+            if (Controller.customers.Count != 0)
+            {
+                Customer c = Controller.customers[listCustomers.SelectedIndex];
+                control.SetCustomer(c);
+            }
+        }
+
+
+
 
         private void btnCreateCust_Click(object sender, EventArgs e)
         {
@@ -37,58 +62,48 @@ namespace Customers
             CC.Show();
         }
 
-        
+
+        //public void DisplayCust()
+        //{
+        //    listCustomers.Items.Clear();
+        //    foreach (Customer p in Controller.customers)
+        //    {
+        //        listCustomers.Items.Add(p.FirstName);
+        //    }
+        //    //listCustomers.SelectedIndex = 0;
+        //}
+
+
+
+
+
         private void btnView_Click(object sender, EventArgs e)
         {
-            if (listCustomers.Items.Count < 1)
-            {
-                MessageBox.Show("Error: No Customer Selected");
-            }
-            else
-            {
-                control.SetSelected(listCustomers.SelectedItem as Customer);
-                control.GetSelected();
-                this.Close();
-                View_Customer CC = new View_Customer();
-                CC.Show();
-            }
-
+            GetCustomerObject();
+            this.Hide();
+            View_Customer CC = new View_Customer();
+            CC.Show();
+            this.Close();
         }
 
-        
+
         private void editCustomerBtn_Click(object sender, EventArgs e)
         {
-            if (listCustomers.Items.Count < 1)
-            {
-                MessageBox.Show("Error: No Customer Selected");
-            }
-            else
-            {
-                control.SetSelected(listCustomers.SelectedItem as Customer);
-                control.GetSelected();
-                this.Close();
-                Update_Customer UC = new Update_Customer();
-                UC.Show();
-            }
+            GetCustomerObject();
+            this.Hide();
+            Update_Customer UC = new Update_Customer();
+            UC.Show();
+            this.Close();
+
 
         }
 
         private void deleteCustomerBtn_Click(object sender, EventArgs e)
         {
-
-            if (listCustomers.Items.Count < 1)
-            {
-                MessageBox.Show("Error: No Customer Selected");
-            }
-            else
-            {
-                control.SetSelected(listCustomers.SelectedItem as Customer);
-                control.GetSelected();
-                this.Close();
-                Delete_Customer DC = new Delete_Customer();
-                DC.Show();
-            }
-
+            GetCustomerObject();
+            this.Close();
+            Delete_Customer DC = new Delete_Customer();
+            DC.Show();
         }
 
 
@@ -124,9 +139,10 @@ namespace Customers
 
         private void btn_backmm_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
             Main_Menu M_M = new Main_Menu();
             M_M.Show();
+            this.Close();
         }
 
         private void ManageCust_FormClosing(object sender, FormClosingEventArgs e)

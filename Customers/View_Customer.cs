@@ -18,14 +18,14 @@ namespace Customers
 
         public void SetCustInfo()
         {
-            Customer selectedCust = control.GetSelected();
+            Customer selectedCust = control.GetCustomer();
             viewLabel.Text = control.CustInfo(selectedCust);
         }
 
         private void btnBack_Click(object sender, EventArgs e)
         {
             this.Close();
-            MainManage mm = new MainManage();
+            Manage_Customers mm = new Manage_Customers();
             mm.ShowDialog();         
         }
 

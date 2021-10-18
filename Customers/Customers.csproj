@@ -47,17 +47,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Account.cs" />
-    <Compile Include="AcManagement.cs">
+    <Compile Include="Manage_Accounts.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AcManagement.Designer.cs">
-      <DependentUpon>AcManagement.cs</DependentUpon>
+    <Compile Include="Manage_Accounts.Designer.cs">
+      <DependentUpon>Manage_Accounts.cs</DependentUpon>
     </Compile>
-    <Compile Include="CreateAccount.cs">
+    <Compile Include="Create_Account.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CreateAccount.Designer.cs">
-      <DependentUpon>CreateAccount.cs</DependentUpon>
+    <Compile Include="Create_Account.Designer.cs">
+      <DependentUpon>Create_Account.cs</DependentUpon>
     </Compile>
     <Compile Include="Create_Customer.cs">
       <SubType>Form</SubType>
@@ -65,11 +65,11 @@
     <Compile Include="Create_Customer.Designer.cs">
       <DependentUpon>Create_Customer.cs</DependentUpon>
     </Compile>
-    <Compile Include="CustomerAccount.cs">
+    <Compile Include="Select_Customer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CustomerAccount.Designer.cs">
-      <DependentUpon>CustomerAccount.cs</DependentUpon>
+    <Compile Include="Select_Customer.Designer.cs">
+      <DependentUpon>Select_Customer.cs</DependentUpon>
     </Compile>
     <Compile Include="Delete_Customer.cs">
       <SubType>Form</SubType>
@@ -77,14 +77,12 @@
     <Compile Include="Delete_Customer.Designer.cs">
       <DependentUpon>Delete_Customer.cs</DependentUpon>
     </Compile>
-    <Compile Include="Everyday.cs" />
     <Compile Include="FailedWithdrawalException.cs" />
-    <Compile Include="Investment.cs" />
-    <Compile Include="MainManage.cs">
+    <Compile Include="Manage_Customers.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainManage.Designer.cs">
-      <DependentUpon>MainManage.cs</DependentUpon>
+    <Compile Include="Manage_Customers.Designer.cs">
+      <DependentUpon>Manage_Customers.cs</DependentUpon>
     </Compile>
     <Compile Include="BaseForm.cs">
       <SubType>Form</SubType>
@@ -100,7 +98,6 @@
     <Compile Include="Main_Menu.Designer.cs">
       <DependentUpon>Main_Menu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Omni.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SingletonData.cs" />
@@ -122,23 +119,23 @@
     <Compile Include="View_Customer.Designer.cs">
       <DependentUpon>View_Customer.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="AcManagement.resx">
-      <DependentUpon>AcManagement.cs</DependentUpon>
+    <EmbeddedResource Include="Manage_Accounts.resx">
+      <DependentUpon>Manage_Accounts.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CreateAccount.resx">
-      <DependentUpon>CreateAccount.cs</DependentUpon>
+    <EmbeddedResource Include="Create_Account.resx">
+      <DependentUpon>Create_Account.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Create_Customer.resx">
       <DependentUpon>Create_Customer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CustomerAccount.resx">
-      <DependentUpon>CustomerAccount.cs</DependentUpon>
+    <EmbeddedResource Include="Select_Customer.resx">
+      <DependentUpon>Select_Customer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Delete_Customer.resx">
       <DependentUpon>Delete_Customer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainManage.resx">
-      <DependentUpon>MainManage.cs</DependentUpon>
+    <EmbeddedResource Include="Manage_Customers.resx">
+      <DependentUpon>Manage_Customers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BaseForm.resx">
       <DependentUpon>BaseForm.cs</DependentUpon>

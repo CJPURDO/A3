@@ -19,16 +19,16 @@ namespace Customers
 
         public void SetCustInfo()
         {
-            Customer selectedCust = control.GetSelected(); 
+            Customer selectedCust = control.GetCustomer(); 
             infoLabel.Text = control.CustInfo(selectedCust);
         }
 
         private void yesDelete_Click(object sender, EventArgs e)
         {
-            Customer selectedCust = control.GetSelected();
+            Customer selectedCust = control.GetCustomer();
             control.DeleteCustomer(selectedCust);
             this.Close();
-            MainManage mm = new MainManage();
+            Manage_Customers mm = new Manage_Customers();
             mm.ShowDialog();
             
         }
@@ -36,8 +36,13 @@ namespace Customers
         private void noDelete_Click(object sender, EventArgs e)
         {
             this.Close();
-            MainManage mm = new MainManage();
+            Manage_Customers mm = new Manage_Customers();
             mm.ShowDialog();    
+        }
+
+        private void delCust_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            //control.SaveAll();
         }
     }
 }

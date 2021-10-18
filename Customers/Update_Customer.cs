@@ -19,7 +19,7 @@ namespace Customers
 
         public void SetCustInfo()
         {
-            Customer selectedCust = control.GetSelected();
+            Customer selectedCust = control.GetCustomer();
             fName.Text = selectedCust.FirstName;
             lName.Text = selectedCust.LastName;
             phoneInput.Text = selectedCust.Phone;
@@ -37,7 +37,7 @@ namespace Customers
 
         private void btn_saveClose_Click(object sender, EventArgs e)
         {
-            Customer selectedCust = control.GetSelected();
+            Customer selectedCust = control.GetCustomer();
 
             if (fName.Text == "" || lName.Text == "" || phoneInput.Text == "")
             {
@@ -47,7 +47,7 @@ namespace Customers
             {
                 control.UpdateCustomer(selectedCust, fName.Text, lName.Text, phoneInput.Text, GetCharge());
                 this.Close();
-                MainManage mm = new MainManage();
+                Manage_Customers mm = new Manage_Customers();
                 mm.ShowDialog();              
             }
         }
@@ -68,7 +68,7 @@ namespace Customers
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
-            MainManage mm = new MainManage();
+            Manage_Customers mm = new Manage_Customers();
             mm.ShowDialog();   
         }
     }

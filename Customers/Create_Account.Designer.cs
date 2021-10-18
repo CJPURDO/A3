@@ -1,7 +1,7 @@
 ﻿
 namespace Customers
 {
-    partial class CreateAccount
+    partial class Create_Account
     {
         /// <summary>
         /// Required designer variable.

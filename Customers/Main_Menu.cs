@@ -21,7 +21,7 @@ namespace Customers
 
         private void mangeCustBtn_Click(object sender, EventArgs e)
         {
-            MainManage mm = new MainManage();
+            Manage_Customers mm = new Manage_Customers();
             mm.Show();
             this.Hide();
         }
@@ -38,7 +38,7 @@ namespace Customers
 
         private void custAccBtn_Click(object sender, EventArgs e)
         {
-            CustomerAccount CA = new CustomerAccount();
+            Select_Customer CA = new Select_Customer();
             CA.Show();
             this.Hide();
         }

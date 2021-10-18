@@ -1,7 +1,7 @@
 ﻿
 namespace Customers
 {
-    partial class AcManagement
+    partial class Manage_Accounts
     {
         /// <summary>
         /// Required designer variable.
@@ -46,11 +46,8 @@ namespace Customers
             this.btnDelAcc = new System.Windows.Forms.Button();
             this.btn_SearchAccount = new System.Windows.Forms.Button();
             this.searchAccTextBox = new System.Windows.Forms.TextBox();
-            this.btnViewAcc = new System.Windows.Forms.Button();
-            this.btnUpdateAcc = new System.Windows.Forms.Button();
             this.btnTransfer = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.accBinding)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.accBinding2)).BeginInit();
+            this.textCustName = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -60,7 +57,7 @@ namespace Customers
             this.btn_backCustAcc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_backCustAcc.Location = new System.Drawing.Point(14, 761);
             this.btn_backCustAcc.Name = "btn_backCustAcc";
-            this.btn_backCustAcc.Size = new System.Drawing.Size(358, 41);
+            this.btn_backCustAcc.Size = new System.Drawing.Size(315, 41);
             this.btn_backCustAcc.TabIndex = 30;
             this.btn_backCustAcc.Text = "<< Return to Customer Accounts";
             this.btn_backCustAcc.UseVisualStyleBackColor = false;
@@ -95,7 +92,7 @@ namespace Customers
             this.amountInputBox.Location = new System.Drawing.Point(145, 35);
             this.amountInputBox.Multiline = true;
             this.amountInputBox.Name = "amountInputBox";
-            this.amountInputBox.Size = new System.Drawing.Size(143, 66);
+            this.amountInputBox.Size = new System.Drawing.Size(150, 66);
             this.amountInputBox.TabIndex = 10;
             this.amountInputBox.Text = "0.00";
             // 
@@ -242,9 +239,9 @@ namespace Customers
             // 
             this.btn_SearchAccount.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.btn_SearchAccount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_SearchAccount.Location = new System.Drawing.Point(309, 145);
+            this.btn_SearchAccount.Location = new System.Drawing.Point(149, 145);
             this.btn_SearchAccount.Name = "btn_SearchAccount";
-            this.btn_SearchAccount.Size = new System.Drawing.Size(114, 33);
+            this.btn_SearchAccount.Size = new System.Drawing.Size(97, 33);
             this.btn_SearchAccount.TabIndex = 35;
             this.btn_SearchAccount.Text = "Search";
             this.btn_SearchAccount.UseVisualStyleBackColor = false;
@@ -253,46 +250,22 @@ namespace Customers
             // searchAccTextBox
             // 
             this.searchAccTextBox.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.searchAccTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchAccTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.searchAccTextBox.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.searchAccTextBox.Location = new System.Drawing.Point(41, 145);
+            this.searchAccTextBox.Location = new System.Drawing.Point(14, 145);
             this.searchAccTextBox.Multiline = true;
             this.searchAccTextBox.Name = "searchAccTextBox";
-            this.searchAccTextBox.Size = new System.Drawing.Size(236, 33);
+            this.searchAccTextBox.Size = new System.Drawing.Size(129, 33);
             this.searchAccTextBox.TabIndex = 34;
-            this.searchAccTextBox.Text = "Enter Account ID...";
+            this.searchAccTextBox.Text = "Account ID...";
             this.searchAccTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.searchAccTextBox.Enter += new System.EventHandler(this.searchAccEnter);
-            // 
-            // btnViewAcc
-            // 
-            this.btnViewAcc.BackColor = System.Drawing.Color.Silver;
-            this.btnViewAcc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnViewAcc.Location = new System.Drawing.Point(252, 395);
-            this.btnViewAcc.Name = "btnViewAcc";
-            this.btnViewAcc.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnViewAcc.Size = new System.Drawing.Size(86, 85);
-            this.btnViewAcc.TabIndex = 36;
-            this.btnViewAcc.Text = "View Account";
-            this.btnViewAcc.UseVisualStyleBackColor = false;
-            // 
-            // btnUpdateAcc
-            // 
-            this.btnUpdateAcc.BackColor = System.Drawing.Color.Silver;
-            this.btnUpdateAcc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdateAcc.Location = new System.Drawing.Point(252, 486);
-            this.btnUpdateAcc.Name = "btnUpdateAcc";
-            this.btnUpdateAcc.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnUpdateAcc.Size = new System.Drawing.Size(86, 85);
-            this.btnUpdateAcc.TabIndex = 37;
-            this.btnUpdateAcc.Text = "Update Account";
-            this.btnUpdateAcc.UseVisualStyleBackColor = false;
             // 
             // btnTransfer
             // 
             this.btnTransfer.BackColor = System.Drawing.Color.Silver;
             this.btnTransfer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTransfer.Location = new System.Drawing.Point(252, 577);
+            this.btnTransfer.Location = new System.Drawing.Point(252, 395);
             this.btnTransfer.Name = "btnTransfer";
             this.btnTransfer.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnTransfer.Size = new System.Drawing.Size(86, 85);
@@ -301,13 +274,24 @@ namespace Customers
             this.btnTransfer.UseVisualStyleBackColor = false;
             this.btnTransfer.Click += new System.EventHandler(this.btnTransfer_Click);
             // 
-            // AcManagement
+            // textCustName
+            // 
+            this.textCustName.BackColor = System.Drawing.SystemColors.InfoText;
+            this.textCustName.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textCustName.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textCustName.ForeColor = System.Drawing.SystemColors.Info;
+            this.textCustName.Location = new System.Drawing.Point(354, 145);
+            this.textCustName.Multiline = true;
+            this.textCustName.Name = "textCustName";
+            this.textCustName.Size = new System.Drawing.Size(357, 33);
+            this.textCustName.TabIndex = 39;
+            // 
+            // ManageAccounts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.ClientSize = new System.Drawing.Size(1493, 836);
+            this.Controls.Add(this.textCustName);
             this.Controls.Add(this.btnTransfer);
-            this.Controls.Add(this.btnUpdateAcc);
-            this.Controls.Add(this.btnViewAcc);
             this.Controls.Add(this.btn_SearchAccount);
             this.Controls.Add(this.searchAccTextBox);
             this.Controls.Add(this.btnDelAcc);
@@ -323,7 +307,7 @@ namespace Customers
             this.Controls.Add(this.accountInfoBtn);
             this.Controls.Add(this.withdrawBtn);
             this.Controls.Add(this.depositBtn);
-            this.Name = "AcManagement";
+            this.Name = "ManageAccounts";
             this.Text = "Account Management";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AccManagement_FormClosing);
             this.Controls.SetChildIndex(this.depositBtn, 0);
@@ -341,11 +325,8 @@ namespace Customers
             this.Controls.SetChildIndex(this.btnDelAcc, 0);
             this.Controls.SetChildIndex(this.searchAccTextBox, 0);
             this.Controls.SetChildIndex(this.btn_SearchAccount, 0);
-            this.Controls.SetChildIndex(this.btnViewAcc, 0);
-            this.Controls.SetChildIndex(this.btnUpdateAcc, 0);
             this.Controls.SetChildIndex(this.btnTransfer, 0);
-            ((System.ComponentModel.ISupportInitialize)(this.accBinding)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.accBinding2)).EndInit();
+            this.Controls.SetChildIndex(this.textCustName, 0);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -372,8 +353,7 @@ namespace Customers
         private System.Windows.Forms.Button btnDelAcc;
         private System.Windows.Forms.Button btn_SearchAccount;
         private System.Windows.Forms.TextBox searchAccTextBox;
-        private System.Windows.Forms.Button btnViewAcc;
-        private System.Windows.Forms.Button btnUpdateAcc;
         private System.Windows.Forms.Button btnTransfer;
+        private System.Windows.Forms.TextBox textCustName;
     }
 }

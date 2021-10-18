@@ -33,6 +33,8 @@ namespace Customers
             this.noDelete = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.infoLabel = new System.Windows.Forms.Label();
+            //((System.ComponentModel.ISupportInitialize)(this.accBinding)).BeginInit();
+            //((System.ComponentModel.ISupportInitialize)(this.accBinding2)).BeginInit();
             this.SuspendLayout();
             // 
             // yesDelete
@@ -89,10 +91,13 @@ namespace Customers
             this.Controls.Add(this.yesDelete);
             this.Name = "Delete_Customer";
             this.Text = "Delete Customer";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.delCust_FormClosing);
             this.Controls.SetChildIndex(this.yesDelete, 0);
             this.Controls.SetChildIndex(this.noDelete, 0);
             this.Controls.SetChildIndex(this.label1, 0);
             this.Controls.SetChildIndex(this.infoLabel, 0);
+            //((System.ComponentModel.ISupportInitialize)(this.accBinding)).EndInit();
+            //((System.ComponentModel.ISupportInitialize)(this.accBinding2)).EndInit();
             this.ResumeLayout(false);
 
         }

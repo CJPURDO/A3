@@ -40,8 +40,7 @@ namespace Customers
             this.label5 = new System.Windows.Forms.Label();
             this.listFrom = new System.Windows.Forms.ListBox();
             this.listTo = new System.Windows.Forms.ListBox();
-            ((System.ComponentModel.ISupportInitialize)(this.accBinding)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.accBinding2)).BeginInit();
+            this.textCustName2 = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -93,7 +92,7 @@ namespace Customers
             this.label3.BackColor = System.Drawing.SystemColors.ControlText;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label3.Location = new System.Drawing.Point(47, 176);
+            this.label3.Location = new System.Drawing.Point(47, 215);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(240, 41);
             this.label3.TabIndex = 21;
@@ -129,7 +128,7 @@ namespace Customers
             this.label4.BackColor = System.Drawing.SystemColors.ControlText;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label4.Location = new System.Drawing.Point(311, 176);
+            this.label4.Location = new System.Drawing.Point(311, 215);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(245, 41);
             this.label4.TabIndex = 22;
@@ -153,7 +152,7 @@ namespace Customers
             this.listFrom.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listFrom.FormattingEnabled = true;
             this.listFrom.ItemHeight = 23;
-            this.listFrom.Location = new System.Drawing.Point(47, 211);
+            this.listFrom.Location = new System.Drawing.Point(47, 250);
             this.listFrom.Name = "listFrom";
             this.listFrom.ScrollAlwaysVisible = true;
             this.listFrom.Size = new System.Drawing.Size(232, 96);
@@ -164,16 +163,29 @@ namespace Customers
             this.listTo.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listTo.FormattingEnabled = true;
             this.listTo.ItemHeight = 23;
-            this.listTo.Location = new System.Drawing.Point(315, 211);
+            this.listTo.Location = new System.Drawing.Point(315, 250);
             this.listTo.Name = "listTo";
             this.listTo.ScrollAlwaysVisible = true;
             this.listTo.Size = new System.Drawing.Size(232, 96);
             this.listTo.TabIndex = 33;
             // 
+            // textCustName2
+            // 
+            this.textCustName2.BackColor = System.Drawing.SystemColors.InfoText;
+            this.textCustName2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textCustName2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textCustName2.ForeColor = System.Drawing.SystemColors.Info;
+            this.textCustName2.Location = new System.Drawing.Point(105, 170);
+            this.textCustName2.Multiline = true;
+            this.textCustName2.Name = "textCustName2";
+            this.textCustName2.Size = new System.Drawing.Size(357, 33);
+            this.textCustName2.TabIndex = 40;
+            // 
             // Transfer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.ClientSize = new System.Drawing.Size(611, 544);
+            this.Controls.Add(this.textCustName2);
             this.Controls.Add(this.listTo);
             this.Controls.Add(this.listFrom);
             this.Controls.Add(this.label5);
@@ -193,11 +205,11 @@ namespace Customers
             this.Controls.SetChildIndex(this.label5, 0);
             this.Controls.SetChildIndex(this.listFrom, 0);
             this.Controls.SetChildIndex(this.listTo, 0);
-            ((System.ComponentModel.ISupportInitialize)(this.accBinding)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.accBinding2)).EndInit();
+            this.Controls.SetChildIndex(this.textCustName2, 0);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -213,5 +225,6 @@ namespace Customers
         private System.Windows.Forms.ListBox listFrom;
         private System.Windows.Forms.ListBox listTo;
         private System.Windows.Forms.TextBox transferAmount;
+        private System.Windows.Forms.TextBox textCustName2;
     }
 }

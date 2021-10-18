@@ -8,34 +8,42 @@ using System.Windows.Forms;
 
 namespace Customers
 {
-    public partial class CreateAccount : Customers.BaseForm
+    public partial class Create_Account : Customers.BaseForm
     {
-        public CreateAccount()
+        public Create_Account()
         {
             InitializeComponent();
             comAcc.SelectedIndex = 0;
-            //MessageBox.Show(Controller.selectedCust.FirstName);
-            //inputBal.Text = Controller.selectedCust.FirstName;
+            inputBal.Text = "0.00";
+            inputInt.Text = "0.00";
+            inputFee.Text = "0.00";
+            inputOver.Text = "0.00";
+
+            
         }
 
         private void btnAddAcc_Click(object sender, EventArgs e)
         {
-            
-            //control.SetSelected(selectedCust);
-            
 
-            control.CreateAccount(Controller.selectedCust, GetAccountType(), 
+
+
+            if (inputBal.Text == "" || inputInt.Text == "" || inputFee.Text == "" || inputOver.Text == "")
+            {
+                MessageBox.Show("Please input valid values");
+            }
+            else
+            {
+                control.CreateAccount(Controller.selectedCust, GetAccountType(),
                                     Convert.ToDouble(inputBal.Text),
                                     Convert.ToDouble(inputInt.Text),
                                     Convert.ToDouble(inputFee.Text),
                                     Convert.ToDouble(inputOver.Text));
-
+                this.Close();
+                Manage_Accounts mm = new Manage_Accounts();
+                mm.ShowDialog();
+            }
             
-            this.Close();
-            AcManagement mm = new AcManagement();
-            mm.ShowDialog();
 
-            //
         }
 
 

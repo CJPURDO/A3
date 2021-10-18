@@ -40,8 +40,8 @@ namespace Customers
             this.phoneInput = new System.Windows.Forms.TextBox();
             this.type = new System.Windows.Forms.Label();
             this.comboType = new System.Windows.Forms.ComboBox();
-            ((System.ComponentModel.ISupportInitialize)(this.accBinding)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.accBinding2)).BeginInit();
+            //((System.ComponentModel.ISupportInitialize)(this.accBinding)).BeginInit();
+            //((System.ComponentModel.ISupportInitialize)(this.accBinding2)).BeginInit();
             this.SuspendLayout();
             // 
             // fName
@@ -197,8 +197,8 @@ namespace Customers
             this.Controls.SetChildIndex(this.phoneInput, 0);
             this.Controls.SetChildIndex(this.comboType, 0);
             this.Controls.SetChildIndex(this.type, 0);
-            ((System.ComponentModel.ISupportInitialize)(this.accBinding)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.accBinding2)).EndInit();
+            //((System.ComponentModel.ISupportInitialize)(this.accBinding)).EndInit();
+            //((System.ComponentModel.ISupportInitialize)(this.accBinding2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

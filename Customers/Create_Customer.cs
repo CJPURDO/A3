@@ -28,7 +28,7 @@ namespace Customers
             {
                 control.CreateCustomer(fName.Text, lName.Text, phoneInput.Text, GetCharge());
                 this.Close();
-                MainManage mm = new MainManage();
+                Manage_Customers mm = new Manage_Customers();
                 mm.ShowDialog();
             }
         }
@@ -37,7 +37,7 @@ namespace Customers
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
-            MainManage mm = new MainManage();
+            Manage_Customers mm = new Manage_Customers();
             mm.ShowDialog();
 
         }

@@ -8,42 +8,56 @@ using System.Windows.Forms;
 
 namespace Customers
 {
-    public partial class Transfer : Customers.BaseForm
+    public partial class Transfer : BaseForm
     {
 
         public Transfer()
         {
             InitializeComponent();
-            accBinding.DataSource = Controller.selectedCust.myAccounts;
-            accBinding2.DataSource = Controller.selectedCust.myAccounts;
-
-            listFrom.DataSource = accBinding;
-            listFrom.DisplayMember = "IdTypeBalance";
-            listFrom.ValueMember = "Id";
-
-            listTo.DataSource = accBinding2;
-            listTo.DisplayMember = "IdTypeBalance";
-            listTo.ValueMember = "Id";
-
+            SetAccounts();
         }
+
+
+        public void SetAccounts()
+        {
+            Customer c = control.GetCustomer();
+            listFrom.Items.Clear();
+            listTo.Items.Clear();
+            List<Account> ca = control.GetAccountsList();
+            textCustName2.Text = c.FirstName + " " + c.LastName;
+
+            if (ca.Count == 0)
+            {
+                listFrom.Items.Add("No Accounts to Show");
+                listTo.Items.Add("No Accounts to Show");
+            }
+            else
+            {
+                foreach (Account a in ca)
+                {
+                    listFrom.Items.Add(a.Id + " " + a.AccountType + " $" + a.Balance);
+                    listTo.Items.Add(a.Id + " " + a.AccountType + " $" + a.Balance);
+                }
+                listFrom.SelectedIndex = 0;
+                listTo.SelectedIndex = 0;
+                transferAmount.Text = "0.00";
+
+            }
+        }
+
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
-            AcManagement AM = new AcManagement();
+            Manage_Accounts AM = new Manage_Accounts();
             AM.Show();
-        }
-
-        private void Reset()
-        {
-            accBinding.ResetBindings(false);
-            accBinding2.ResetBindings(false);
-            transferAmount.Text = "0.00";
         }
 
         private void btnTransfer_Click(object sender, EventArgs e)
         {
-            string pattern = @"^\-?[0-9]+(?:\.[0-9]{1,2})?$";
+            //string pattern = @"^\-?[0-9]+(?:\.[0-9]{1,2})?$";
+            List<Account> ca = control.GetAccountsList();
+            //Customer c = control.GetCustomer();
 
             if (System.Text.RegularExpressions.Regex.IsMatch(transferAmount.Text, pattern))
             {
@@ -51,24 +65,23 @@ namespace Customers
                 if (amount <= 0)
                 {
                     MessageBox.Show("Please enter valid amount $");
-                    Reset();
+                    SetAccounts();
+
                 }
                 else
                 {
                     try
                     {
-                        control.SetAccount(listFrom.SelectedItem as Account);
-                        control.SetAccount2(listTo.SelectedItem as Account);
-
-                        control.AccTransfer(control.GetAccount(), control.GetAccount2(), amount);
-                        Reset(); ;
+                        Account from = ca[listFrom.SelectedIndex];
+                        Account to = ca[listTo.SelectedIndex];
+                        control.AccTransfer(from, to, amount);
+                        SetAccounts();
                     }
                     //if withdraw fails catch with exception and show message in listbox
                     catch (FailedWithdrawalException a)
                     {
-
                         MessageBox.Show(a.Message);
-                        Reset();
+                        SetAccounts();
                     }
                 }
             }
@@ -76,7 +89,7 @@ namespace Customers
             else
             {
                 MessageBox.Show("Please enter valid amount $");
-                Reset();
+                SetAccounts();
             }
         }
 

@@ -22,7 +22,7 @@ namespace Customers
 
    
 
-        
+        //Singleton instance of controller type
         public static Controller control = new Controller();
         private Controller() { }
 
@@ -48,27 +48,36 @@ namespace Customers
 
 
 
-        //Set selected account
-        public void SetAccount(Account acc)
+        ////Set selected account
+        //public void SetAccount(Account acc)
+        //{
+        //    selectedAcc = acc;
+        //}
+
+        //public void SetAccount2(Account acc)
+        //{
+        //    selectedAcc2 = acc;
+        //}
+
+        ////Return selected account
+        //public Account GetAccount()
+        //{
+        //    return selectedAcc;
+        //}
+
+        //public Account GetAccount2()
+        //{
+        //    return selectedAcc2;
+        //}
+
+
+
+        public List<Account> GetAccountsList()
         {
-            selectedAcc = acc;
+            return selectedCust.myAccounts;
         }
 
-        public void SetAccount2(Account acc)
-        {
-            selectedAcc2 = acc;
-        }
 
-        //Return selected account
-        public Account GetAccount()
-        {
-            return selectedAcc;
-        }
-
-        public Account GetAccount2()
-        {
-            return selectedAcc2;
-        }
 
         //Account information
         public string AccInfo(Account selectedAcc)
@@ -144,13 +153,13 @@ namespace Customers
 
 
         //Set selected customer
-        public void SetSelected(Customer cust)
+        public void SetCustomer(Customer c)
         {
-            selectedCust = cust;
+            selectedCust = c;
         }
 
         //Return selected customer
-        public Customer GetSelected()
+        public Customer GetCustomer()
         {
             return selectedCust;
         }
@@ -220,7 +229,7 @@ namespace Customers
             IFormatter formatter = new BinaryFormatter();
 
             //Create a new IO stream to write to the file Objects.bin
-            Stream stream = new FileStream("objects.bin", FileMode.Create,
+            Stream stream = new FileStream(@"C:\Users\camronjon\Documents\Cam_Personal\IT_Course\BIT706_Programming iii\BIT706_A2_5030521\Customers\Customers\bin\objects.bin", FileMode.Create,
             FileAccess.Write, FileShare.None);
 
             //use the formatter to serialize the collection and send it to the filestream
@@ -238,11 +247,11 @@ namespace Customers
         {
 
             IFormatter formatter = new BinaryFormatter();
-            Stream stream = new FileStream("Objects.bin", FileMode.Open, FileAccess.Read,
+            Stream stream = new FileStream(@"C:\Users\camronjon\Documents\Cam_Personal\IT_Course\BIT706_Programming iii\BIT706_A2_5030521\Customers\Customers\bin\Objects.bin", FileMode.Open, FileAccess.Read,
             FileShare.Read);
 
             // if the file is empty, do nothing
-            if (new FileInfo("Objects.bin").Length == 0)
+            if (new FileInfo(@"C:\Users\camronjon\Documents\Cam_Personal\IT_Course\BIT706_Programming iii\BIT706_A2_5030521\Customers\Customers\bin\Objects.bin").Length == 0)
             {
                 stream.Close();
             }
@@ -264,7 +273,7 @@ namespace Customers
         public void setIDinstance()
         {
             IFormatter formatter = new BinaryFormatter();
-            Stream stream = new FileStream("Data.bin", FileMode.Open, FileAccess.Read,
+            Stream stream = new FileStream(@"C:\Users\camronjon\Documents\Cam_Personal\IT_Course\BIT706_Programming iii\BIT706_A2_5030521\Customers\Customers\bin\Data.bin", FileMode.Open, FileAccess.Read,
             FileShare.Read);
 
             SingletonData.setInstance((SingletonData)formatter.Deserialize(stream));
@@ -283,7 +292,7 @@ namespace Customers
             IFormatter formatter = new BinaryFormatter();
 
             //Create a new IO stream to write to the file Objects.bin
-            Stream stream = new FileStream("Data.bin", FileMode.Create,
+            Stream stream = new FileStream(@"C:\Users\camronjon\Documents\Cam_Personal\IT_Course\BIT706_Programming iii\BIT706_A2_5030521\Customers\Customers\bin\Data.bin", FileMode.Create,
             FileAccess.Write, FileShare.None);
 
             //use the formatter to serialize the collection and send it to the filestream

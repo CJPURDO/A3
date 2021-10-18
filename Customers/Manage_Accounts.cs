@@ -8,35 +8,48 @@ using System.Windows.Forms;
 
 namespace Customers
 {
-    public partial class AcManagement : BaseForm
+    public partial class Manage_Accounts : BaseForm
     {
 
-        
+        Controller control = Controller.GetControlInstance();
 
-        string pattern = @"^\-?[0-9]+(?:\.[0-9]{1,2})?$";
-        public AcManagement()
+        //string pattern = @"^\-?[0-9]+(?:\.[0-9]{1,2})?$";
+        public Manage_Accounts()
         {
             InitializeComponent();
 
-            accBinding.DataSource = Controller.selectedCust.myAccounts;
-            accBinding2.DataSource = Controller.selectedCust.myAccounts;
 
-            listSelectAcc.DataSource = accBinding;
-            listSelectAcc.DisplayMember = "IdTypeBalance";
-            listSelectAcc.ValueMember = "Id";
+            DisplayAccounts();
 
-            //Controller.selectedCust.myAccounts.Add(new Everyday(100));
-            //Controller.selectedCust.myAccounts.Add(new Investment(22.22, 5, 1));
-            //Controller.selectedCust.myAccounts.Add(new Omni(234, 2, 2, -290));
-            //DisplayMyAccount();
-            updateReset();
         }
+
 
         public void updateReset()
         {
-            accBinding.ResetBindings(false);
+            DisplayAccounts();
             amountInputBox.Text = "0.00";
         }
+
+        public void DisplayAccounts()
+        {
+            Customer selectedCust = control.GetCustomer();
+            List<Account> ca = control.GetAccountsList();
+            listSelectAcc.Items.Clear();
+            textCustName.Text = selectedCust.FirstName + " " + selectedCust.LastName;
+            if (ca.Count == 0)
+            {
+                listSelectAcc.Items.Add("No Accounts to Show");
+            }
+            else
+            {
+                foreach (Account a in ca)
+                {
+                    listSelectAcc.Items.Add(a.Id + " " + a.AccountType + "  " + "$" + a.Balance);
+                }
+                listSelectAcc.SelectedIndex = 0;
+            }
+        }
+
 
 
         private void accountInfoBtn_Click(object sender, EventArgs e)
@@ -48,9 +61,10 @@ namespace Customers
             }
             else
             {
-                control.SetAccount(listSelectAcc.SelectedItem as Account);
+                List<Account> ca = control.GetAccountsList();
+                Account acc = ca[listSelectAcc.SelectedIndex];
                 listAccInfo.Items.Insert(0, "\n");
-                listAccInfo.Items.Insert(0, control.AccInfo(control.GetAccount()));
+                listAccInfo.Items.Insert(0, control.AccInfo(acc));
             }
         }
 
@@ -63,9 +77,10 @@ namespace Customers
             }
             else
             {
-                control.SetAccount(listSelectAcc.SelectedItem as Account);
+                List<Account> ca = control.GetAccountsList();
+                Account acc = ca[listSelectAcc.SelectedIndex];
                 listAccInfo.Items.Insert(0, "\n");
-                listAccInfo.Items.Insert(0, control.AccBal(control.GetAccount()));
+                listAccInfo.Items.Insert(0, control.AccBal(acc));
             }
         }
 
@@ -85,11 +100,11 @@ namespace Customers
                 }
                 else
                 {
-                    control.SetAccount(listSelectAcc.SelectedItem as Account);
-                    control.AccDeposit(control.GetAccount(), Convert.ToDouble(amountInputBox.Text));
-
+                    List<Account> ca = control.GetAccountsList();
+                    Account acc = ca[listSelectAcc.SelectedIndex];
+                    control.AccDeposit(acc, Convert.ToDouble(amountInputBox.Text));
                     listAccInfo.Items.Insert(0, "\n");
-                    listAccInfo.Items.Insert(0, control.AccInfo(control.GetAccount()));
+                    listAccInfo.Items.Insert(0, control.AccInfo(acc));
                     updateReset();
                 }
             }
@@ -121,11 +136,12 @@ namespace Customers
                 {
                     try
                     {
-                        control.SetAccount(listSelectAcc.SelectedItem as Account);
-                        control.AccWithdraw(control.GetAccount(), Convert.ToDouble(amountInputBox.Text));
+                        List<Account> ca = control.GetAccountsList();
+                        Account acc = ca[listSelectAcc.SelectedIndex];               
+                        control.AccWithdraw(acc, Convert.ToDouble(amountInputBox.Text));
 
                         listAccInfo.Items.Insert(0, "\n");
-                        listAccInfo.Items.Insert(0, control.AccInfo(control.GetAccount()));
+                        listAccInfo.Items.Insert(0, control.AccInfo(acc));
                         updateReset();
                     }
                     //if withdraw fails catch with exception and show message in listbox
@@ -149,20 +165,22 @@ namespace Customers
 
         private void btnCalcInt_Click(object sender, EventArgs e)
         {
-            control.SetAccount(listSelectAcc.SelectedItem as Account);
-            control.AccCalcInt(control.GetAccount());
+            List<Account> ca = control.GetAccountsList();
+            Account acc = ca[listSelectAcc.SelectedIndex];
+            control.AccCalcInt(acc);
 
             listAccInfo.Items.Insert(0, "\n");
-            listAccInfo.Items.Insert(0, "Interest: $" + control.GetAccount().CalcInterest());
+            listAccInfo.Items.Insert(0, "Interest: $" + acc.CalcInterest());
         }
 
         private void addInterestBtn_Click(object sender, EventArgs e)
         {
-            control.SetAccount(listSelectAcc.SelectedItem as Account);
-            control.AccAddInt(control.GetAccount());
+            List<Account> ca = control.GetAccountsList();
+            Account acc = ca[listSelectAcc.SelectedIndex];
+            control.AccAddInt(acc);
 
             listAccInfo.Items.Insert(0, "\n");
-            listAccInfo.Items.Insert(0, control.AccInfo(control.GetAccount()));
+            listAccInfo.Items.Insert(0, control.AccInfo(acc));
             updateReset();
         }
 
@@ -175,8 +193,11 @@ namespace Customers
 
         private void btnDelAcc_Click(object sender, EventArgs e)
         {
-            control.SetAccount(listSelectAcc.SelectedItem as Account);
-            control.DeleteAccount(control.GetAccount());
+
+            List<Account> ca = control.GetAccountsList();
+            Account acc = ca[listSelectAcc.SelectedIndex];
+            
+            control.DeleteAccount(acc);
             updateReset();
         }
 
@@ -203,17 +224,18 @@ namespace Customers
 
         private void btn_backCustAcc_Click(object sender, EventArgs e)
         {
-            CustomerAccount CA = new CustomerAccount();
+            this.Hide();
+            Select_Customer CA = new Select_Customer();
             CA.Show();
             this.Close();
         }
 
         private void btnCreateAcc_Click(object sender, EventArgs e)
         {
-            //control.SetSelected(control.GetSelected());
-            this.Close();
-            CreateAccount CA = new CreateAccount();
+            this.Hide();
+            Create_Account CA = new Create_Account();
             CA.Show();
+            this.Close();
         }
 
         private void btnTransfer_Click(object sender, EventArgs e)
