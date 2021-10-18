@@ -56,8 +56,8 @@ namespace Customers
         private void btnTransfer_Click(object sender, EventArgs e)
         {
             //string pattern = @"^\-?[0-9]+(?:\.[0-9]{1,2})?$";
-            List<Account> ca = control.GetAccountsList();
-            //Customer c = control.GetCustomer();
+            
+            
 
             if (System.Text.RegularExpressions.Regex.IsMatch(transferAmount.Text, pattern))
             {
@@ -72,9 +72,11 @@ namespace Customers
                 {
                     try
                     {
+                        List<Account> ca = control.GetAccountsList();
                         Account from = ca[listFrom.SelectedIndex];
                         Account to = ca[listTo.SelectedIndex];
-                        control.AccTransfer(from, to, amount);
+                        Customer c = control.GetCustomer();
+                        control.AccTransfer(from, to, amount, c.Charge);
                         SetAccounts();
                     }
                     //if withdraw fails catch with exception and show message in listbox
@@ -95,7 +97,7 @@ namespace Customers
 
         private void Transfer_FormClosing(object sender, FormClosingEventArgs e)
         {
-            control.SaveAll();
+            control.Save();
         }
     }
 

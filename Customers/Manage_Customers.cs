@@ -53,27 +53,12 @@ namespace Customers
         }
 
 
-
-
         private void btnCreateCust_Click(object sender, EventArgs e)
         {
             this.Close();
             Create_Customer CC = new Create_Customer();
             CC.Show();
         }
-
-
-        //public void DisplayCust()
-        //{
-        //    listCustomers.Items.Clear();
-        //    foreach (Customer p in Controller.customers)
-        //    {
-        //        listCustomers.Items.Add(p.FirstName);
-        //    }
-        //    //listCustomers.SelectedIndex = 0;
-        //}
-
-
 
 
 
@@ -147,7 +132,7 @@ namespace Customers
 
         private void ManageCust_FormClosing(object sender, FormClosingEventArgs e)
         {
-            control.SaveAll();
+            control.Save();
         }
     }
 }

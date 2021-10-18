@@ -16,11 +16,7 @@ namespace Customers
 
         public static Customer selectedCust;
 
-        public static Account selectedAcc;
-        public static Account selectedAcc2;
 
-
-   
 
         //Singleton instance of controller type
         public static Controller control = new Controller();
@@ -32,7 +28,6 @@ namespace Customers
             {
                 control = new Controller();
             }
-
             return control;
         }
 
@@ -41,34 +36,13 @@ namespace Customers
         //Create account
         public void CreateAccount(Customer c, string accType, double openBalance, double intRate, double fees, double overdraft)
         {
-            if (accType == "E") { c.myAccounts.Add(new Everyday(openBalance)); }
+
+            double minusOverdraft = overdraft - (overdraft * 2);
+
+            if (accType == "E") { c.myAccounts.Add(new Everyday(openBalance, intRate, fees)); }
             else if (accType == "I") { c.myAccounts.Add(new Investment(openBalance, intRate, fees)); }
-            else if (accType == "O") { c.myAccounts.Add(new Omni(openBalance, intRate, fees, overdraft)); }
+            else if (accType == "O") { c.myAccounts.Add(new Omni(openBalance, intRate, fees, minusOverdraft)); }
         }
-
-
-
-        ////Set selected account
-        //public void SetAccount(Account acc)
-        //{
-        //    selectedAcc = acc;
-        //}
-
-        //public void SetAccount2(Account acc)
-        //{
-        //    selectedAcc2 = acc;
-        //}
-
-        ////Return selected account
-        //public Account GetAccount()
-        //{
-        //    return selectedAcc;
-        //}
-
-        //public Account GetAccount2()
-        //{
-        //    return selectedAcc2;
-        //}
 
 
 
@@ -98,16 +72,16 @@ namespace Customers
         }
 
         //Transfer
-        public void AccTransfer(Account selectedAcc, Account selectedAcc2, double amount)
+        public void AccTransfer(Account from, Account to, double amount, double charge)
         {
-            selectedAcc.Withdraw(amount);
-            selectedAcc2.Deposit(amount);
+            from.Withdraw(amount, charge);
+            to.Deposit(amount);
         }
 
         //Withdraw
-        public void AccWithdraw(Account selectedAcc, double amount)
+        public void AccWithdraw(Account selectedAcc, double amount, double charge)
         {
-            selectedAcc.Withdraw(amount);
+            selectedAcc.Withdraw(amount, charge);
         }
 
         //Calculate Interest
@@ -229,7 +203,7 @@ namespace Customers
             IFormatter formatter = new BinaryFormatter();
 
             //Create a new IO stream to write to the file Objects.bin
-            Stream stream = new FileStream(@"C:\Users\camronjon\Documents\Cam_Personal\IT_Course\BIT706_Programming iii\BIT706_A2_5030521\Customers\Customers\bin\objects.bin", FileMode.Create,
+            Stream stream = new FileStream("objects.bin", FileMode.Create,
             FileAccess.Write, FileShare.None);
 
             //use the formatter to serialize the collection and send it to the filestream
@@ -247,11 +221,11 @@ namespace Customers
         {
 
             IFormatter formatter = new BinaryFormatter();
-            Stream stream = new FileStream(@"C:\Users\camronjon\Documents\Cam_Personal\IT_Course\BIT706_Programming iii\BIT706_A2_5030521\Customers\Customers\bin\Objects.bin", FileMode.Open, FileAccess.Read,
+            Stream stream = new FileStream("Objects.bin", FileMode.Open, FileAccess.Read,
             FileShare.Read);
 
             // if the file is empty, do nothing
-            if (new FileInfo(@"C:\Users\camronjon\Documents\Cam_Personal\IT_Course\BIT706_Programming iii\BIT706_A2_5030521\Customers\Customers\bin\Objects.bin").Length == 0)
+            if (new FileInfo("Objects.bin").Length == 0)
             {
                 stream.Close();
             }
@@ -273,7 +247,7 @@ namespace Customers
         public void setIDinstance()
         {
             IFormatter formatter = new BinaryFormatter();
-            Stream stream = new FileStream(@"C:\Users\camronjon\Documents\Cam_Personal\IT_Course\BIT706_Programming iii\BIT706_A2_5030521\Customers\Customers\bin\Data.bin", FileMode.Open, FileAccess.Read,
+            Stream stream = new FileStream("Data.bin", FileMode.Open, FileAccess.Read,
             FileShare.Read);
 
             SingletonData.setInstance((SingletonData)formatter.Deserialize(stream));
@@ -292,7 +266,7 @@ namespace Customers
             IFormatter formatter = new BinaryFormatter();
 
             //Create a new IO stream to write to the file Objects.bin
-            Stream stream = new FileStream(@"C:\Users\camronjon\Documents\Cam_Personal\IT_Course\BIT706_Programming iii\BIT706_A2_5030521\Customers\Customers\bin\Data.bin", FileMode.Create,
+            Stream stream = new FileStream("Data.bin", FileMode.Create,
             FileAccess.Write, FileShare.None);
 
             //use the formatter to serialize the collection and send it to the filestream
@@ -305,7 +279,7 @@ namespace Customers
         /// <summary>
         /// Save all data - used upon closing the app
         /// </summary>
-        public void SaveAll()
+        public void Save()
         {
             WriteBinaryData();
             WriteID();

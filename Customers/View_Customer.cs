@@ -18,8 +18,14 @@ namespace Customers
 
         public void SetCustInfo()
         {
-            Customer selectedCust = control.GetCustomer();
-            viewLabel.Text = control.CustInfo(selectedCust);
+            Customer c = control.GetCustomer();
+            viewLabel.Text = "Customer Details : \n" 
+                + c.FirstName + " " + c.LastName + "\n" 
+                + "Customer Number: " + c.ID + "\n"
+                + "Contact Number: " + c.Phone + "\n" 
+                + "Fee Rate: " + (c.Charge * 100) + "%";
+
+
         }
 
         private void btnBack_Click(object sender, EventArgs e)

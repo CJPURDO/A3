@@ -100,11 +100,11 @@ namespace Customers
 
 
         //Withdraw
-        public virtual void Withdraw(double amount)
+        public virtual void Withdraw(double amount, double charge)
         {
             if (amount > balance)
             {
-                ApplyFee();
+                ApplyFee(charge);
 
                 //if withdraw amount greater than balance throw exception, message appropriate to account type
                 throw new FailedWithdrawalException(AccountType + "; " + LastTransaction + " $" + Fee);
@@ -117,9 +117,9 @@ namespace Customers
         }
 
         //Apply transaction fee, virtual method can be overridden/specialised 
-        protected virtual void ApplyFee()
+        protected virtual void ApplyFee(double charge)
         {
-            balance = balance - fee;
+            balance = balance - (fee * charge);
             lastTransaction = "Transaction Failed, Fee Applied; ";
         }
 
@@ -145,7 +145,7 @@ namespace Customers
     public class Everyday : Account
     {
         //Constructor set type
-        public Everyday(double openBalance) : base(openBalance)
+        public Everyday(double openBalance, double intRate, double fees) : base(openBalance, intRate, fees)
         {
             accountType = "Everyday";
         }
@@ -156,7 +156,7 @@ namespace Customers
             return LastTransaction + "\n" + Information;
         }
 
-        protected override void ApplyFee()
+        protected override void ApplyFee(double charge)
         {
             lastTransaction = "Insufficient Funds, No Fee; ";
         }
@@ -184,9 +184,9 @@ namespace Customers
             return LastTransaction + "\n" + Information;
         }
 
-        protected override void ApplyFee()
+        protected override void ApplyFee(double charge)
         {
-            balance = balance - fee;
+            balance = balance - (fee * charge);
             lastTransaction = "Transaction Failed, Fee Applied; ";
 
 
@@ -221,11 +221,11 @@ namespace Customers
             return LastTransaction + "\n" + Information;
         }
 
-        public override void Withdraw(double amount)
+        public override void Withdraw(double amount, double charge)
         {
             if ((balance - amount) < overdraft)
             {
-                ApplyFee();
+                ApplyFee(charge);
 
                 //Omni account overides withdraw method to allow for overdraft
                 throw new FailedWithdrawalException(AccountType + "; " + LastTransaction + " $" + Fee);
@@ -252,9 +252,9 @@ namespace Customers
             }
         }
 
-        protected override void ApplyFee()
+        protected override void ApplyFee(double charge)
         {
-            balance = balance - fee;
+            balance = balance - (fee * charge);
             lastTransaction = "Transaction Failed, Fee Applied; ";
         }
 

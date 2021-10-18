@@ -45,7 +45,7 @@ namespace Customers
 
         private void Main_Menu_FormClosing(object sender, FormClosingEventArgs e)
         {
-            control.SaveAll();
+            control.Save();
         }
     }
 }

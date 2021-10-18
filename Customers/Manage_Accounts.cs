@@ -136,9 +136,10 @@ namespace Customers
                 {
                     try
                     {
+                        Customer c = control.GetCustomer();
                         List<Account> ca = control.GetAccountsList();
                         Account acc = ca[listSelectAcc.SelectedIndex];               
-                        control.AccWithdraw(acc, Convert.ToDouble(amountInputBox.Text));
+                        control.AccWithdraw(acc, Convert.ToDouble(amountInputBox.Text), c.Charge);
 
                         listAccInfo.Items.Insert(0, "\n");
                         listAccInfo.Items.Insert(0, control.AccInfo(acc));
@@ -247,7 +248,7 @@ namespace Customers
 
         private void AccManagement_FormClosing(object sender, FormClosingEventArgs e)
         {
-            control.SaveAll();
+            control.Save();
         }
     }
 }

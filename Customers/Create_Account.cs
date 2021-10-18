@@ -14,35 +14,33 @@ namespace Customers
         {
             InitializeComponent();
             comAcc.SelectedIndex = 0;
-            inputBal.Text = "0.00";
-            inputInt.Text = "0.00";
-            inputFee.Text = "0.00";
+            SetName();
+        }
+
+
+        public void SetName()
+        {
+            Customer c = control.GetCustomer();
+            textCustName.Text = c.FirstName + " " + c.LastName;
             inputOver.Text = "0.00";
 
-            
         }
 
         private void btnAddAcc_Click(object sender, EventArgs e)
         {
 
+            Customer c = control.GetCustomer();
+            control.CreateAccount(c, GetAccountType(), 0.00, 4, 10, Convert.ToDouble(inputOver.Text));
+
+            this.Hide();
+            Manage_Accounts mm = new Manage_Accounts();
+            mm.ShowDialog();
+            this.Close();
 
 
-            if (inputBal.Text == "" || inputInt.Text == "" || inputFee.Text == "" || inputOver.Text == "")
-            {
-                MessageBox.Show("Please input valid values");
-            }
-            else
-            {
-                control.CreateAccount(Controller.selectedCust, GetAccountType(),
-                                    Convert.ToDouble(inputBal.Text),
-                                    Convert.ToDouble(inputInt.Text),
-                                    Convert.ToDouble(inputFee.Text),
-                                    Convert.ToDouble(inputOver.Text));
-                this.Close();
-                Manage_Accounts mm = new Manage_Accounts();
-                mm.ShowDialog();
-            }
-            
+
+
+
 
         }
 
@@ -53,7 +51,7 @@ namespace Customers
             {
                 return "E";
             }
-            else if (comAcc.SelectedIndex == 1) 
+            else if (comAcc.SelectedIndex == 1)
             {
                 return "I";
             }
