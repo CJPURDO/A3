@@ -15,7 +15,7 @@ namespace Customers
         //private static int nextID = 1;
         private string firstName;
         private string lastName;
-        private string phone;
+        private int phone;
         private double charge;
 
         public List<Account> myAccounts = new List<Account>();
@@ -26,7 +26,7 @@ namespace Customers
         public int ID { get => iD; set => iD = value; }
         public string FirstName { get => firstName; set => firstName = value; }
         public string LastName { get => lastName; set => lastName = value; }
-        public string Phone { get => phone; set => phone = value; }
+        public int Phone { get => phone; set => phone = value; }
         public double Charge { get => charge; set => charge = value; }
 
         public string IdFullName
@@ -80,7 +80,7 @@ namespace Customers
             ID = SingletonData.NextId;
         }
 
-        public Customer(string newFirstName, string newLastName, string newPhone, double newCharge) : this()
+        public Customer(string newFirstName, string newLastName, int newPhone, double newCharge) : this()
         {
             FirstName = newFirstName;
             LastName = newLastName;

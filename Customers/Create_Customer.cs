@@ -13,9 +13,9 @@ namespace Customers
         public Create_Customer()
         {
             InitializeComponent();
-            //GetControlInstance();
+
             comboType.SelectedIndex = 0;
-            //Controller.GetControlInstance();
+
         }
 
         private void btnAddCust_Click(object sender, EventArgs e)
@@ -26,10 +26,17 @@ namespace Customers
             }
             else
             {
-                control.CreateCustomer(fName.Text, lName.Text, phoneInput.Text, GetCharge());
-                this.Close();
-                Manage_Customers mm = new Manage_Customers();
-                mm.ShowDialog();
+                try
+                {
+                    control.CreateCustomer(fName.Text, lName.Text, Int32.Parse(phoneInput.Text), GetCharge());
+                    this.Close();
+                    Manage_Customers mm = new Manage_Customers();
+                    mm.ShowDialog();
+                }
+                catch
+                {
+                    MessageBox.Show("error");
+                }
             }
         }
 

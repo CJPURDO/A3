@@ -22,7 +22,7 @@ namespace Customers
             Customer selectedCust = control.GetCustomer();
             fName.Text = selectedCust.FirstName;
             lName.Text = selectedCust.LastName;
-            phoneInput.Text = selectedCust.Phone;
+            phoneInput.Text = selectedCust.Phone.ToString();
 
             if (selectedCust.Charge == 1.0)
             {
@@ -45,7 +45,7 @@ namespace Customers
             }
             else
             {
-                control.UpdateCustomer(selectedCust, fName.Text, lName.Text, phoneInput.Text, GetCharge());
+                control.UpdateCustomer(selectedCust, fName.Text, lName.Text, Int32.Parse(phoneInput.Text), GetCharge());
                 this.Close();
                 Manage_Customers mm = new Manage_Customers();
                 mm.ShowDialog();              

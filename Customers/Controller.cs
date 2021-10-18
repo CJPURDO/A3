@@ -147,13 +147,13 @@ namespace Customers
         }
 
         //Create customer
-        public void CreateCustomer(string firstna, string lastna, string phone, double charge)
+        public void CreateCustomer(string firstna, string lastna, int phone, double charge)
         {
             customers.Add(new Customer(firstna, lastna, phone, charge));
         }
 
         //Update customer
-        public void UpdateCustomer(Customer obj, string firstna, string lastna, string phone, double charge)
+        public void UpdateCustomer(Customer obj, string firstna, string lastna, int phone, double charge)
         {
             foreach (Customer c in customers)
             {

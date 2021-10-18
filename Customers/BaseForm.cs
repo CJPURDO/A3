@@ -25,63 +25,72 @@ namespace Customers
 
 
 
-        
-        
+
+
 
         public BaseForm()
         {
             InitializeComponent();
-            //control.ReadBinaryData();
-            //control.setIDinstance();
+            control.ReadBinaryData();
+            control.setIDinstance();
 
 
-            //if the customer list is null after reading the file (first time)
+            //if the customer list is null after reading the file(first time)
             //create a few test customers and write them to the file
-            //if (Controller.AllCust.Count == 0)
-            //{
-            //    //create customers
-            //    InitCustomers();
-            //    //write them to file
-            //    controller.WriteBinaryData();
-            //    //update stored ID
-            //    controller.WriteID();
+            if (Controller.customers.Count == 0)
+            {
+                //create customers
+                InitCustomers();
+                //write them to file
+                control.WriteBinaryData();
+                //update stored ID
+                control.WriteID();
 
-            //}
+            }
+
+        }
 
 
-            //create a few customers to test -- how these are added here does not comply entirely with MVC, but they are just for testing
-            //public void InitCustomers()
-            //{
-            //    //if the customer list is empty, create test customers and thier accounts
-            //    if (Controller.AllCust.Count == 0)
-            //    {
-            //        // pre-pop with customers
-            //        controller.CreateCustomer(115, "Ryan", "Wilson", 022351764, 1.0);
-            //        controller.CreateCustomer(116, "Michelle", "Simons", 027999784, 1.0);
-            //        controller.CreateCustomer(117, "Alpharius", "Omegon", 02900997, 0.5);
+        //create a few customers to test -- how these are added here does not comply entirely with MVC, but they are just for testing
+        public void InitCustomers()
+        {
+            //if the customer list is empty, create test customers and thier accounts
+            if (Controller.customers.Count == 0)
+            {
+                // pre-pop with customers
+                control.CreateCustomer("Ryan", "Wilson", 022351764, 1.0);
+                control.CreateCustomer("Michelle", "Simons", 027999784, 1.0);
+                control.CreateCustomer("Alpharius", "Omegon", 02900997, 0.5);
 
-            //        // create a few test accounts
-            //        Account a = new Everyday(10.00, 1.00, 4.00);
-            //        Account b = new Investment(20.00, 4, 10);
-            //        Account c = new Omni(35.50, 4, 10, -200);
-            //        Account d = new Everyday(55.00, 1, 2);
-            //        Account e = new Omni(400.00, 4, 10, -1000);
-            //        Account f = new Investment(235.60, 4, 10);
-            //        Account g = new Omni(10000.00, 4, 10, -20000);
-            //        Account h = new Everyday(95.00, 1, 5);
+                //// create a few test accounts
+                //Account a = new Everyday(10.00, 1.00, 4.00);
+                //Account b = new Investment(20.00, 4, 10);
+                //Account c = new Omni(35.50, 4, 10, -200);
+                //Account d = new Everyday(55.00, 1, 2);
+                //Account e = new Omni(400.00, 4, 10, -1000);
+                //Account f = new Investment(235.60, 4, 10);
+                //Account g = new Omni(10000.00, 4, 10, -20000);
+                //Account h = new Everyday(95.00, 1, 5);
 
-            //        // give each test customer some accounts
+                // give each test customer some accounts
 
-            //        control.CreateAccount(Controller.customers[0], a);
-            //        controller.AddAccount(Controller.customers[0], b);
-            //        controller.AddAccount(Controller.customers[0], c);
-            //        controller.AddAccount(Controller.customers[1], d);
-            //        controller.AddAccount(Controller.customers[1], e);
-            //        controller.AddAccount(Controller.customers[2], f);
-            //        controller.AddAccount(Controller.customers[2], g);
-            //        controller.AddAccount(Controller.customers[2], h);
+                control.CreateAccount(Controller.customers[0], "E", 10.00, 1.00, 4.00, 0);
+                control.CreateAccount(Controller.customers[0], "I", 20.00, 4, 10, 0);
+                control.CreateAccount(Controller.customers[0], "O", 20.00, 4, 10, 500);
+                control.CreateAccount(Controller.customers[1], "E", 10.00, 1.00, 4.00, 0);
+                control.CreateAccount(Controller.customers[1], "I", 20.00, 4, 10, 0);
+                control.CreateAccount(Controller.customers[1], "O", 20.00, 4, 10, 500);
+                control.CreateAccount(Controller.customers[2], "E", 10.00, 1.00, 4.00, 0);
+                control.CreateAccount(Controller.customers[2], "I", 20.00, 4, 10, 0);
+                control.CreateAccount(Controller.customers[2], "O", 20.00, 4, 10, 500);
+                //controller.AddAccount(Controller.customers[0], c);
+                //controller.AddAccount(Controller.customers[1], d);
+                //controller.AddAccount(Controller.customers[1], e);
+                //controller.AddAccount(Controller.customers[2], f);
+                //controller.AddAccount(Controller.customers[2], g);
+                //controller.AddAccount(Controller.customers[2], h);
 
-            //    }
+            }
 
             //}
 
@@ -107,6 +116,7 @@ namespace Customers
 
 
         }
+
 
 
 
