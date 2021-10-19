@@ -10,7 +10,7 @@ namespace Customers
 {
     public partial class Transfer : BaseForm
     {
-
+        
         public Transfer()
         {
             InitializeComponent();
@@ -55,7 +55,7 @@ namespace Customers
 
         private void btnTransfer_Click(object sender, EventArgs e)
         {
-            //string pattern = @"^\-?[0-9]+(?:\.[0-9]{1,2})?$";
+            string pattern = @"^\-?[0-9]+(?:\.[0-9]{1,2})?$";
             
             
 

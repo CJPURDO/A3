@@ -15,18 +15,16 @@ namespace Customers
         //private static int nextID = 1;
         private string firstName;
         private string lastName;
-        private int phone;
+        private string phone;
         private double charge;
 
         public List<Account> myAccounts = new List<Account>();
-
-        //public List<Account> accounts = new List<Account>();
 
         //get and set property accessors 
         public int ID { get => iD; set => iD = value; }
         public string FirstName { get => firstName; set => firstName = value; }
         public string LastName { get => lastName; set => lastName = value; }
-        public int Phone { get => phone; set => phone = value; }
+        public string Phone { get => phone; set => phone = value; }
         public double Charge { get => charge; set => charge = value; }
 
         public string IdFullName
@@ -45,31 +43,6 @@ namespace Customers
             }
         }
 
-        
-
-
-        //public void AddAccount(Account a)
-        //{
-        //    if (myAccounts.Contains(a))
-        //    {
-        //        MessageBox.Show("You have already borrowed this book");
-        //    }
-        //    else
-        //    {
-        //        myAccounts.Add(a);
-        //        a.MyCustomer = this;
-        //    }
-
-
-        //}
-
-
-
-
-
-
-
-
 
         //Constructors 
         public Customer()
@@ -80,7 +53,7 @@ namespace Customers
             ID = SingletonData.NextId;
         }
 
-        public Customer(string newFirstName, string newLastName, int newPhone, double newCharge) : this()
+        public Customer(string newFirstName, string newLastName, string newPhone, double newCharge) : this()
         {
             FirstName = newFirstName;
             LastName = newLastName;

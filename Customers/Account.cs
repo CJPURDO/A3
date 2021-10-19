@@ -9,6 +9,7 @@ namespace Customers
 {
     //Abstract class can not be instantiated, only concrete subclasses can be instantiated
     [Serializable]
+    
     public abstract class Account
     {
         protected static int nextID = 1;
@@ -20,6 +21,7 @@ namespace Customers
         protected double fee;
         protected double interest;
 
+        
 
         //get and set property accessors
         public int Id

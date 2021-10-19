@@ -8,8 +8,10 @@ using System.Windows.Forms;
 
 namespace Customers
 {
-    public partial class Create_Account : Customers.BaseForm
+    public partial class Create_Account : BaseForm
     {
+
+        
         public Create_Account()
         {
             InitializeComponent();
@@ -36,10 +38,6 @@ namespace Customers
             Manage_Accounts mm = new Manage_Accounts();
             mm.ShowDialog();
             this.Close();
-
-
-
-
 
 
         }

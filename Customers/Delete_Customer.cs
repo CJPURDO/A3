@@ -9,28 +9,28 @@ using System.Windows.Forms;
 namespace Customers
 {
     public partial class Delete_Customer : Customers.BaseForm
-    {
+    {  
         public Delete_Customer()
         {
             InitializeComponent();
             SetCustInfo();
         }
 
-
         public void SetCustInfo()
         {
-            Customer selectedCust = control.GetCustomer(); 
-            infoLabel.Text = control.CustInfo(selectedCust);
+            Customer c = control.GetCustomer(); 
+            infoLabel.Text = control.CustInfo(c);
         }
 
         private void yesDelete_Click(object sender, EventArgs e)
         {
-            Customer selectedCust = control.GetCustomer();
-            control.DeleteCustomer(selectedCust);
-            this.Close();
+            Customer c = control.GetCustomer();
+            control.DeleteCustomer(c);
+            this.Hide();
             Manage_Customers mm = new Manage_Customers();
             mm.ShowDialog();
-            
+            this.Close();
+
         }
 
         private void noDelete_Click(object sender, EventArgs e)
@@ -42,7 +42,7 @@ namespace Customers
 
         private void delCust_FormClosing(object sender, FormClosingEventArgs e)
         {
-            //control.SaveAll();
+            control.Save();
         }
     }
 }

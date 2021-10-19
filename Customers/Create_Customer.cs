@@ -13,9 +13,7 @@ namespace Customers
         public Create_Customer()
         {
             InitializeComponent();
-
             comboType.SelectedIndex = 0;
-
         }
 
         private void btnAddCust_Click(object sender, EventArgs e)
@@ -24,11 +22,15 @@ namespace Customers
             {
                 MessageBox.Show("Please input valid values");
             }
+            else if (!System.Text.RegularExpressions.Regex.IsMatch(phoneInput.Text, "^[0-9]*$"))
+            {
+                MessageBox.Show("Please input valid phone number");
+            }
             else
             {
                 try
                 {
-                    control.CreateCustomer(fName.Text, lName.Text, Int32.Parse(phoneInput.Text), GetCharge());
+                    control.CreateCustomer(fName.Text, lName.Text, phoneInput.Text, GetCharge());
                     this.Close();
                     Manage_Customers mm = new Manage_Customers();
                     mm.ShowDialog();
@@ -43,10 +45,10 @@ namespace Customers
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
             Manage_Customers mm = new Manage_Customers();
             mm.ShowDialog();
-
+            this.Close();
         }
 
 

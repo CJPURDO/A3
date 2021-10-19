@@ -14,14 +14,10 @@ namespace Customers
 {
     public partial class Manage_Customers : Customers.BaseForm
     {
-
-        //controller instance
-        Controller control = Controller.GetControlInstance();
         public Manage_Customers()
         {
             InitializeComponent();
             DisplayCust();
-
         }
 
         public void DisplayCust()
@@ -35,14 +31,13 @@ namespace Customers
             {
                 foreach (Customer c in Controller.customers)
                 {
-                    listCustomers.Items.Add(c.ID + " " + c.FirstName + "  " + c.LastName);
+                    listCustomers.Items.Add(c.ID + " " + c.FirstName + " " + c.LastName);
                 }
                 listCustomers.SelectedIndex = 0;
             }
         }
 
-
-        //select customer object
+        //retrieve customer object
         public void GetCustomerObject()
         {
             if (Controller.customers.Count != 0)
@@ -51,7 +46,6 @@ namespace Customers
                 control.SetCustomer(c);
             }
         }
-
 
         private void btnCreateCust_Click(object sender, EventArgs e)
         {
@@ -79,16 +73,15 @@ namespace Customers
             Update_Customer UC = new Update_Customer();
             UC.Show();
             this.Close();
-
-
         }
 
         private void deleteCustomerBtn_Click(object sender, EventArgs e)
         {
             GetCustomerObject();
-            this.Close();
+            this.Hide();
             Delete_Customer DC = new Delete_Customer();
             DC.Show();
+            this.Close();
         }
 
 
@@ -96,7 +89,7 @@ namespace Customers
 
         private void btn_SearchCustomer_Click(object sender, EventArgs e)
         {
-            if (System.Text.RegularExpressions.Regex.IsMatch(searchCustTextBox.Text, "[^0-9]"))
+            if (System.Text.RegularExpressions.Regex.IsMatch(searchCustTextBox.Text, "^[0-9]*$"))
             {
                 MessageBox.Show("Please enter valid Customer ID.");
                 searchCustTextBox.Text = searchCustTextBox.Text.Remove(searchCustTextBox.Text.Length - 1);

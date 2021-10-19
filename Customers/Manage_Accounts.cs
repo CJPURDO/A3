@@ -10,19 +10,11 @@ namespace Customers
 {
     public partial class Manage_Accounts : BaseForm
     {
-
-        Controller control = Controller.GetControlInstance();
-
-        //string pattern = @"^\-?[0-9]+(?:\.[0-9]{1,2})?$";
         public Manage_Accounts()
         {
             InitializeComponent();
-
-
             DisplayAccounts();
-
         }
-
 
         public void updateReset()
         {
@@ -32,10 +24,10 @@ namespace Customers
 
         public void DisplayAccounts()
         {
-            Customer selectedCust = control.GetCustomer();
+            Customer c = control.GetCustomer();
             List<Account> ca = control.GetAccountsList();
             listSelectAcc.Items.Clear();
-            textCustName.Text = selectedCust.FirstName + " " + selectedCust.LastName;
+            textCustName.Text = c.FirstName + " " + c.LastName;
             if (ca.Count == 0)
             {
                 listSelectAcc.Items.Add("No Accounts to Show");

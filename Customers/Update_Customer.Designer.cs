@@ -184,6 +184,7 @@ namespace Customers
             this.Controls.Add(this.fName);
             this.Name = "Update_Customer";
             this.Text = "Update Customer";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.updateCustFormClosing);
             this.Controls.SetChildIndex(this.fName, 0);
             this.Controls.SetChildIndex(this.lName, 0);
             this.Controls.SetChildIndex(this.btn_saveClose, 0);

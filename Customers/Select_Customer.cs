@@ -11,7 +11,6 @@ namespace Customers
     public partial class Select_Customer : Customers.BaseForm
     {
 
-        Controller control = Controller.GetControlInstance();
         public Select_Customer()
         {
             InitializeComponent();

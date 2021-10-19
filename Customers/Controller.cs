@@ -14,7 +14,7 @@ namespace Customers
         //Static list of customers for program-wide storage
         public static List<Customer> customers = new List<Customer>();
 
-        public static Customer selectedCust;
+        public static Customer c;
 
 
 
@@ -48,7 +48,7 @@ namespace Customers
 
         public List<Account> GetAccountsList()
         {
-            return selectedCust.myAccounts;
+            return c.myAccounts;
         }
 
 
@@ -101,13 +101,13 @@ namespace Customers
         //Delete account
         public void DeleteAccount(Account a)
         {
-            selectedCust.myAccounts.Remove(a);
+            c.myAccounts.Remove(a);
         }
 
         //Search account by ID
         public Account SearchAccount(int accID)
         {
-            foreach (Account a in selectedCust.myAccounts)
+            foreach (Account a in c.myAccounts)
             {
                 if (a.Id == accID)
                 {
@@ -127,33 +127,33 @@ namespace Customers
 
 
         //Set selected customer
-        public void SetCustomer(Customer c)
+        public void SetCustomer(Customer cust)
         {
-            selectedCust = c;
+            c = cust;
         }
 
         //Return selected customer
         public Customer GetCustomer()
         {
-            return selectedCust;
+            return c;
         }
 
         //Customer information
-        public string CustInfo(Customer selectedCust)
+        public string CustInfo(Customer c)
         {
-            return selectedCust.ID + " " + selectedCust.FirstName + " " + selectedCust.LastName +
-                "\n" + selectedCust.Phone +
-                "\n" + selectedCust.ChargePercent + ";";
+            return c.ID + " " + c.FirstName + " " + c.LastName +
+                "\n" + c.Phone +
+                "\n" + c.ChargePercent + ";";
         }
 
         //Create customer
-        public void CreateCustomer(string firstna, string lastna, int phone, double charge)
+        public void CreateCustomer(string firstna, string lastna, string phone, double charge)
         {
             customers.Add(new Customer(firstna, lastna, phone, charge));
         }
 
         //Update customer
-        public void UpdateCustomer(Customer obj, string firstna, string lastna, int phone, double charge)
+        public void UpdateCustomer(Customer obj, string firstna, string lastna, string phone, double charge)
         {
             foreach (Customer c in customers)
             {
@@ -233,7 +233,7 @@ namespace Customers
             //if the file has data, read it
             else
             {
-                Controller.customers = (List<Customer>)formatter.Deserialize(stream);
+                customers = (List<Customer>)formatter.Deserialize(stream);
                 stream.Close();
 
             }
