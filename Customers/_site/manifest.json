@@ -1,0 +1,366 @@
+{
+  "homepages": [],
+  "source_base_path": "C:/Users/camronjon/Documents/Cam_Personal/IT_Course/BIT706_Programming iii/BIT706_A2_5030521/Customers/Customers",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Conceptual",
+      "source_relative_path": "api/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "api/index.html",
+          "hash": "XgPNdj/aXzDasUNiQSLBfCgYtpTbC/ViUznhMmHH2Yw="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/intro.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/intro.html",
+          "hash": "7UxNfjF3xidnpVKqY/1PM11CThnGw35/3OTUa1fLZzY="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "articles/toc.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/toc.html",
+          "hash": "BlPxk5mtl2kgfcZUgkEguqiSAR/EUyUTT4EdebwkQvs="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html",
+          "hash": "gA35v7881qO2iDmY1ZFSoaibtux3FOuzgUMhGf8/nVo="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Customers.Account.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Customers.Account.html",
+          "hash": "CJNKnBN4kWBvJDS/7Onla28jFHvrh9fGcPZOOUgeyPE="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Customers.BaseForm.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Customers.BaseForm.html",
+          "hash": "GXH+Dga5zSfcqQ4LSI1ABYUjPbBh7Sf5ZniHfvTsqO4="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Customers.Controller.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Customers.Controller.html",
+          "hash": "09tP2uYx0SjqfSFuZy29EWC3y3V/V7m1iW6+8FLbGE8="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Customers.Create_Account.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Customers.Create_Account.html",
+          "hash": "mQX0o5VDalUevCbvslik+9xknQPIT2Sm4w6ixDul0yI="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Customers.Create_Customer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Customers.Create_Customer.html",
+          "hash": "gAT9/WSk4LNIh9mkEZKASahxH5RbwICWmuxi5K8BDDs="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Customers.Customer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Customers.Customer.html",
+          "hash": "Id+I0TarqpwN2LicmOpwa3mMSnShBBVCGKya4SbwzcQ="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Customers.Delete_Customer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Customers.Delete_Customer.html",
+          "hash": "tFHehM5jzUeFd0mECOu6bL3CtcnbylO6lTXkrS21N5c="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Customers.Everyday.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Customers.Everyday.html",
+          "hash": "qsb7dU6O9xY7+muaYwzEpoOVk44zn5yXnCjeqRr/wBc="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Customers.FailedWithdrawalException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Customers.FailedWithdrawalException.html",
+          "hash": "Vhm5BNLaEaj937wF10TH49IUbl1RLYSY7m69afQEUYg="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Customers.Investment.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Customers.Investment.html",
+          "hash": "HtI5WOM8BxrGkS7AQ5+N/JqMncqKgl7dRbP79NJt62w="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Customers.Main_Menu.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Customers.Main_Menu.html",
+          "hash": "8zLW+Gi0WslnhA6Y9K9kj5Dx5mH4JnGIisnyzSTAtS8="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Customers.Manage_Accounts.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Customers.Manage_Accounts.html",
+          "hash": "TcP0Gk+b0Hl7n9PW1jFOdBU0A9cSLkU5QkdUcY2HgOI="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Customers.Manage_Customers.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Customers.Manage_Customers.html",
+          "hash": "lMc0QBY99IIGY43/xW4xaNiKncLt32lv0SO/VlbVC2s="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Customers.Omni.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Customers.Omni.html",
+          "hash": "k8s38xjuqMtE1the6Fy2R2suxpycFSb59b4y5GLo3LA="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Customers.Select_Customer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Customers.Select_Customer.html",
+          "hash": "1CU4irBYQPV96TGePlB54yKMvr+uQGgRXQAoTWNvI9o="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Customers.SingletonData.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Customers.SingletonData.html",
+          "hash": "kFMfpJnTr1rgI2S5mVSN8/rY/YvRgtvJezFSW/uzSlg="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Customers.Transfer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Customers.Transfer.html",
+          "hash": "fd81deASLneCSNOR4Se1lUnynu1XfYI/MWJMDogVS7Q="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Customers.Update_Customer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Customers.Update_Customer.html",
+          "hash": "YFrZt85aL15eWbbkxClHxQYwc8pNA/1ImadBznRuoPA="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Customers.View_Customer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Customers.View_Customer.html",
+          "hash": "8aBV1w+rSiteXtH+AFnqeCkZeZ+s60gjVFsm18NCyOc="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Customers.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Customers.html",
+          "hash": "pBt+wgLmKVCxGgfgskWCuHQ1Mht2UmJh4AHhnkT8j18="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "obj/api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html",
+          "hash": "bEMb75WCr9jmhBIxJihF2KDA+idoYnjmsrrohoQYHBg="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html",
+          "hash": "Oa9PuD4E1hvZnCkVjUgzNBX6S00Zo5YilamTERTZo54="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    }
+  ],
+  "incremental_info": [
+    {
+      "status": {
+        "can_incremental": true,
+        "incrementalPhase": "build",
+        "total_file_count": 0,
+        "skipped_file_count": 0
+      },
+      "processors": {
+        "ConceptualDocumentProcessor": {
+          "can_incremental": true,
+          "incrementalPhase": "build",
+          "total_file_count": 3,
+          "skipped_file_count": 3
+        },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": true,
+          "incrementalPhase": "build",
+          "total_file_count": 20,
+          "skipped_file_count": 20
+        },
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
+        }
+      }
+    },
+    {
+      "status": {
+        "can_incremental": true,
+        "details": "Can support incremental post processing.",
+        "incrementalPhase": "postProcessing",
+        "total_file_count": 0,
+        "skipped_file_count": 0
+      },
+      "processors": {}
+    }
+  ],
+  "version_info": {},
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}

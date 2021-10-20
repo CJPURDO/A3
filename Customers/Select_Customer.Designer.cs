@@ -58,6 +58,7 @@ namespace Customers
             this.btn_SearchCustomer2.TabIndex = 9;
             this.btn_SearchCustomer2.Text = "Search";
             this.btn_SearchCustomer2.UseVisualStyleBackColor = false;
+            this.btn_SearchCustomer2.Click += new System.EventHandler(this.btn_SearchCustomer2_Click);
             // 
             // searchCustTextBox2
             // 
@@ -71,6 +72,8 @@ namespace Customers
             this.searchCustTextBox2.TabIndex = 8;
             this.searchCustTextBox2.Text = "Enter Customer ID...";
             this.searchCustTextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.searchCustTextBox2.Enter += new System.EventHandler(this.searchEnter2);
+            this.searchCustTextBox2.Leave += new System.EventHandler(this.searchLeave2);
             // 
             // btnManageCustAcc
             // 
@@ -93,7 +96,7 @@ namespace Customers
             this.listCustomers2.Size = new System.Drawing.Size(382, 404);
             this.listCustomers2.TabIndex = 7;
             // 
-            // CustomerAccount
+            // Select_Customer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.ClientSize = new System.Drawing.Size(783, 684);
@@ -102,7 +105,7 @@ namespace Customers
             this.Controls.Add(this.searchCustTextBox2);
             this.Controls.Add(this.btnManageCustAcc);
             this.Controls.Add(this.listCustomers2);
-            this.Name = "CustomerAccount";
+            this.Name = "Select_Customer";
             this.Text = "Customer Accounts";
             this.Controls.SetChildIndex(this.listCustomers2, 0);
             this.Controls.SetChildIndex(this.btnManageCustAcc, 0);

@@ -1,0 +1,1030 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class Controller
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class Controller
+   ">
+    <meta name="generator" content="docfx 2.58.4.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Customers.Controller">
+  
+  
+  <h1 id="Customers_Controller" data-uid="Customers.Controller" class="text-break">Class Controller
+  </h1>
+  <div class="markdown level0 summary"><p>Povides functionality between the user-facing interfaces and the 
+object and serialization classes of the application
+Provides methods for access to the Accounts and Customer classes instances
+CRUD object functionality and persists storage application</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">Controller</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Customers.html">Customers</a></h6>
+  <h6><strong>Assembly</strong>: Customers.dll</h6>
+  <h5 id="Customers_Controller_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Serializable]
+public class Controller</code></pre>
+  </div>
+  <h3 id="fields">Fields
+  </h3>
+  
+  
+  <h4 id="Customers_Controller_c" data-uid="Customers.Controller.c">c</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Customer c</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Customers.Customer.html">Customer</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="Customers_Controller_control" data-uid="Customers.Controller.control">control</h4>
+  <div class="markdown level1 summary"><p>This is a singleton pattern return for an instance of the controller class</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Controller control</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Customers.Controller.html">Controller</a></td>
+        <td><p>Instance of controller</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="Customers_Controller_customers" data-uid="Customers.Controller.customers">customers</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static List&lt;Customer&gt; customers</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.List</span>&lt;<a class="xref" href="Customers.Customer.html">Customer</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  
+  
+  <a id="Customers_Controller_AccAddInt_" data-uid="Customers.Controller.AccAddInt*"></a>
+  <h4 id="Customers_Controller_AccAddInt_Customers_Account_" data-uid="Customers.Controller.AccAddInt(Customers.Account)">AccAddInt(Account)</h4>
+  <div class="markdown level1 summary"><p>Adds calculated interest to account</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void AccAddInt(Account a)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Customers.Account.html">Account</a></td>
+        <td><span class="parametername">a</span></td>
+        <td><p>The account</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Customers_Controller_AccBal_" data-uid="Customers.Controller.AccBal*"></a>
+  <h4 id="Customers_Controller_AccBal_Customers_Account_" data-uid="Customers.Controller.AccBal(Customers.Account)">AccBal(Account)</h4>
+  <div class="markdown level1 summary"><p>Returns account balance</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string AccBal(Account a)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Customers.Account.html">Account</a></td>
+        <td><span class="parametername">a</span></td>
+        <td><p>The account</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Customers_Controller_AccCalcInt_" data-uid="Customers.Controller.AccCalcInt*"></a>
+  <h4 id="Customers_Controller_AccCalcInt_Customers_Account_" data-uid="Customers.Controller.AccCalcInt(Customers.Account)">AccCalcInt(Account)</h4>
+  <div class="markdown level1 summary"><p>Calculates interest of account based on its interest rate</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void AccCalcInt(Account a)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Customers.Account.html">Account</a></td>
+        <td><span class="parametername">a</span></td>
+        <td><p>The account</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Customers_Controller_AccDeposit_" data-uid="Customers.Controller.AccDeposit*"></a>
+  <h4 id="Customers_Controller_AccDeposit_Customers_Account_System_Double_" data-uid="Customers.Controller.AccDeposit(Customers.Account,System.Double)">AccDeposit(Account, Double)</h4>
+  <div class="markdown level1 summary"><p>Deposits an amount into a customers account</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void AccDeposit(Account a, double amount)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Customers.Account.html">Account</a></td>
+        <td><span class="parametername">a</span></td>
+        <td><p>The account</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td><span class="parametername">amount</span></td>
+        <td><p>Amount to be deposited</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Customers_Controller_AccInfo_" data-uid="Customers.Controller.AccInfo*"></a>
+  <h4 id="Customers_Controller_AccInfo_Customers_Account_" data-uid="Customers.Controller.AccInfo(Customers.Account)">AccInfo(Account)</h4>
+  <div class="markdown level1 summary"><p>Returns information of account</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string AccInfo(Account a)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Customers.Account.html">Account</a></td>
+        <td><span class="parametername">a</span></td>
+        <td><p>The account</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Customers_Controller_AccTransfer_" data-uid="Customers.Controller.AccTransfer*"></a>
+  <h4 id="Customers_Controller_AccTransfer_Customers_Account_Customers_Account_System_Double_System_Double_" data-uid="Customers.Controller.AccTransfer(Customers.Account,Customers.Account,System.Double,System.Double)">AccTransfer(Account, Account, Double, Double)</h4>
+  <div class="markdown level1 summary"><p>Transfers from one account to another</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void AccTransfer(Account from, Account to, double amount, double charge)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Customers.Account.html">Account</a></td>
+        <td><span class="parametername">from</span></td>
+        <td><p>The account to transfer from</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Customers.Account.html">Account</a></td>
+        <td><span class="parametername">to</span></td>
+        <td><p>The account to transfer to</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td><span class="parametername">amount</span></td>
+        <td><p>The amount to transfer</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td><span class="parametername">charge</span></td>
+        <td><p>The charge rate of the customer</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Customers_Controller_AccWithdraw_" data-uid="Customers.Controller.AccWithdraw*"></a>
+  <h4 id="Customers_Controller_AccWithdraw_Customers_Account_System_Double_System_Double_" data-uid="Customers.Controller.AccWithdraw(Customers.Account,System.Double,System.Double)">AccWithdraw(Account, Double, Double)</h4>
+  <div class="markdown level1 summary"><p>Withdraw from an account. Will apply a fee if the funds are insufficient</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void AccWithdraw(Account a, double amount, double charge)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Customers.Account.html">Account</a></td>
+        <td><span class="parametername">a</span></td>
+        <td><p>The account</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td><span class="parametername">amount</span></td>
+        <td><p>Amount to withdraw</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td><span class="parametername">charge</span></td>
+        <td><p>The charge rate ofthe customer type</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Customers.FailedWithdrawalException.html">FailedWithdrawalException</a></td>
+        <td><p>Thrown if funds are less than amount withdrawn, or if overdraft is exceeded</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Customers_Controller_CreateAccount_" data-uid="Customers.Controller.CreateAccount*"></a>
+  <h4 id="Customers_Controller_CreateAccount_Customers_Customer_System_String_System_Double_System_Double_System_Double_System_Double_" data-uid="Customers.Controller.CreateAccount(Customers.Customer,System.String,System.Double,System.Double,System.Double,System.Double)">CreateAccount(Customer, String, Double, Double, Double, Double)</h4>
+  <div class="markdown level1 summary"><p>Adds an account to a customers account list</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void CreateAccount(Customer c, string accType, double openBalance, double intRate, double fees, double overdraft)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Customers.Customer.html">Customer</a></td>
+        <td><span class="parametername">c</span></td>
+        <td><p>Customer</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">accType</span></td>
+        <td><p>Type of Account</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td><span class="parametername">openBalance</span></td>
+        <td><p>Opening Balance of account</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td><span class="parametername">intRate</span></td>
+        <td><p>Interest rate</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td><span class="parametername">fees</span></td>
+        <td><p>Fee Amount for account</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td><span class="parametername">overdraft</span></td>
+        <td><p>Overdraft limit for account</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Customers_Controller_CreateCustomer_" data-uid="Customers.Controller.CreateCustomer*"></a>
+  <h4 id="Customers_Controller_CreateCustomer_System_String_System_String_System_String_System_Double_" data-uid="Customers.Controller.CreateCustomer(System.String,System.String,System.String,System.Double)">CreateCustomer(String, String, String, Double)</h4>
+  <div class="markdown level1 summary"><p>This method creates a customer object</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void CreateCustomer(string firstna, string lastna, string phone, double charge)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">firstna</span></td>
+        <td><p>Customer First Name</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">lastna</span></td>
+        <td><p>Customer Last Name</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">phone</span></td>
+        <td><p>Customer Phone number</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td><span class="parametername">charge</span></td>
+        <td><p>Customer charge rate - staff 0.5, customer 1.0</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Customers_Controller_CustInfo_" data-uid="Customers.Controller.CustInfo*"></a>
+  <h4 id="Customers_Controller_CustInfo_Customers_Customer_" data-uid="Customers.Controller.CustInfo(Customers.Customer)">CustInfo(Customer)</h4>
+  <div class="markdown level1 summary"><p>Returns customer information</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string CustInfo(Customer c)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Customers.Customer.html">Customer</a></td>
+        <td><span class="parametername">c</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>Selected customer information</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Customers_Controller_DeleteAccount_" data-uid="Customers.Controller.DeleteAccount*"></a>
+  <h4 id="Customers_Controller_DeleteAccount_Customers_Account_" data-uid="Customers.Controller.DeleteAccount(Customers.Account)">DeleteAccount(Account)</h4>
+  <div class="markdown level1 summary"><p>Deletes an Account</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void DeleteAccount(Account a)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Customers.Account.html">Account</a></td>
+        <td><span class="parametername">a</span></td>
+        <td><p>The account to delete</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Customers_Controller_DeleteCustomer_" data-uid="Customers.Controller.DeleteCustomer*"></a>
+  <h4 id="Customers_Controller_DeleteCustomer_Customers_Customer_" data-uid="Customers.Controller.DeleteCustomer(Customers.Customer)">DeleteCustomer(Customer)</h4>
+  <div class="markdown level1 summary"><p>Deletes a customer</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void DeleteCustomer(Customer c)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Customers.Customer.html">Customer</a></td>
+        <td><span class="parametername">c</span></td>
+        <td><p>The customer to delete</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Customers_Controller_GetAccountsList_" data-uid="Customers.Controller.GetAccountsList*"></a>
+  <h4 id="Customers_Controller_GetAccountsList" data-uid="Customers.Controller.GetAccountsList">GetAccountsList()</h4>
+  <div class="markdown level1 summary"><p>Retrieve the Accounts of the selected customer</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;Account&gt; GetAccountsList()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.List</span>&lt;<a class="xref" href="Customers.Account.html">Account</a>&gt;</td>
+        <td><p>The Account list of the selected customer</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Customers_Controller_GetControlInstance_" data-uid="Customers.Controller.GetControlInstance*"></a>
+  <h4 id="Customers_Controller_GetControlInstance" data-uid="Customers.Controller.GetControlInstance">GetControlInstance()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Controller GetControlInstance()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Customers.Controller.html">Controller</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Customers_Controller_GetCustomer_" data-uid="Customers.Controller.GetCustomer*"></a>
+  <h4 id="Customers_Controller_GetCustomer" data-uid="Customers.Controller.GetCustomer">GetCustomer()</h4>
+  <div class="markdown level1 summary"><p>Returns the currently selectedcustomer</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Customer GetCustomer()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Customers.Customer.html">Customer</a></td>
+        <td><p>Selected customer</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Customers_Controller_ReadBinaryData_" data-uid="Customers.Controller.ReadBinaryData*"></a>
+  <h4 id="Customers_Controller_ReadBinaryData" data-uid="Customers.Controller.ReadBinaryData">ReadBinaryData()</h4>
+  <div class="markdown level1 summary"><p>Reads customer data from file, or closes if the file is empty to prevent exception</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ReadBinaryData()</code></pre>
+  </div>
+  
+  
+  <a id="Customers_Controller_Save_" data-uid="Customers.Controller.Save*"></a>
+  <h4 id="Customers_Controller_Save" data-uid="Customers.Controller.Save">Save()</h4>
+  <div class="markdown level1 summary"><p>Save data</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Save()</code></pre>
+  </div>
+  
+  
+  <a id="Customers_Controller_SearchAccount_" data-uid="Customers.Controller.SearchAccount*"></a>
+  <h4 id="Customers_Controller_SearchAccount_System_Int32_" data-uid="Customers.Controller.SearchAccount(System.Int32)">SearchAccount(Int32)</h4>
+  <div class="markdown level1 summary"><p>Search for account ID</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Account SearchAccount(int accID)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">accID</span></td>
+        <td><p>The account ID number to search</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Customers.Account.html">Account</a></td>
+        <td><p>An account if found, null if not</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Customers_Controller_SearchCustomer_" data-uid="Customers.Controller.SearchCustomer*"></a>
+  <h4 id="Customers_Controller_SearchCustomer_System_Int32_" data-uid="Customers.Controller.SearchCustomer(System.Int32)">SearchCustomer(Int32)</h4>
+  <div class="markdown level1 summary"><p>Finds a customer based upon thier ID number</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Customer SearchCustomer(int custID)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">custID</span></td>
+        <td><p>Customer Number</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Customers.Customer.html">Customer</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Customers_Controller_SetCustomer_" data-uid="Customers.Controller.SetCustomer*"></a>
+  <h4 id="Customers_Controller_SetCustomer_Customers_Customer_" data-uid="Customers.Controller.SetCustomer(Customers.Customer)">SetCustomer(Customer)</h4>
+  <div class="markdown level1 summary"><p>Sets the static variable for selected customer c</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetCustomer(Customer cust)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Customers.Customer.html">Customer</a></td>
+        <td><span class="parametername">cust</span></td>
+        <td><p>Selected customer</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Customers_Controller_setIDinstance_" data-uid="Customers.Controller.setIDinstance*"></a>
+  <h4 id="Customers_Controller_setIDinstance" data-uid="Customers.Controller.setIDinstance">setIDinstance()</h4>
+  <div class="markdown level1 summary"><p>Get the stored nextID value from file</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void setIDinstance()</code></pre>
+  </div>
+  
+  
+  <a id="Customers_Controller_UpdateCustomer_" data-uid="Customers.Controller.UpdateCustomer*"></a>
+  <h4 id="Customers_Controller_UpdateCustomer_Customers_Customer_System_String_System_String_System_String_System_Double_" data-uid="Customers.Controller.UpdateCustomer(Customers.Customer,System.String,System.String,System.String,System.Double)">UpdateCustomer(Customer, String, String, String, Double)</h4>
+  <div class="markdown level1 summary"><p>Enables the editing of customer attributes</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void UpdateCustomer(Customer c, string firstna, string lastna, string phone, double charge)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Customers.Customer.html">Customer</a></td>
+        <td><span class="parametername">c</span></td>
+        <td><p>Customer to be updated</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">firstna</span></td>
+        <td><p>Customer First Name</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">lastna</span></td>
+        <td><p>Customer Last Name</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">phone</span></td>
+        <td><p>Customer contact number</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td><span class="parametername">charge</span></td>
+        <td><p>Customer charge rate</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Customers_Controller_WriteBinaryData_" data-uid="Customers.Controller.WriteBinaryData*"></a>
+  <h4 id="Customers_Controller_WriteBinaryData" data-uid="Customers.Controller.WriteBinaryData">WriteBinaryData()</h4>
+  <div class="markdown level1 summary"><p>Saves Customer Data to file</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void WriteBinaryData()</code></pre>
+  </div>
+  
+  
+  <a id="Customers_Controller_WriteID_" data-uid="Customers.Controller.WriteID*"></a>
+  <h4 id="Customers_Controller_WriteID" data-uid="Customers.Controller.WriteID">WriteID()</h4>
+  <div class="markdown level1 summary"><p>Save the nextID value tofile</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void WriteID()</code></pre>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

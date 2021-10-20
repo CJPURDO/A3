@@ -10,23 +10,34 @@ namespace Customers
 {
     public partial class Manage_Accounts : BaseForm
     {
+        protected BindingSource accBinding = new BindingSource();
         public Manage_Accounts()
         {
             InitializeComponent();
             DisplayAccounts();
+
+            Customer c = control.GetCustomer();
+            accBinding.DataSource = Controller.c.myAccounts;
+            listSelectAcc.DataSource = accBinding;
+            listSelectAcc.DisplayMember = "IdTypeBalance";
+            listSelectAcc.ValueMember = "Id";
+
         }
 
         public void updateReset()
         {
-            DisplayAccounts();
+
+            accBinding.ResetBindings(false);
             amountInputBox.Text = "0.00";
         }
 
         public void DisplayAccounts()
         {
+            listSelectAcc.Items.Clear();
+            
             Customer c = control.GetCustomer();
             List<Account> ca = control.GetAccountsList();
-            listSelectAcc.Items.Clear();
+            
             textCustName.Text = c.FirstName + " " + c.LastName;
             if (ca.Count == 0)
             {

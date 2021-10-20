@@ -37,8 +37,6 @@ namespace Customers
             this.btn_SearchCustomer = new System.Windows.Forms.Button();
             this.btn_backmm = new System.Windows.Forms.Button();
             this.btnView = new System.Windows.Forms.Button();
-            //((System.ComponentModel.ISupportInitialize)(this.accBinding)).BeginInit();
-            //((System.ComponentModel.ISupportInitialize)(this.accBinding2)).BeginInit();
             this.SuspendLayout();
             // 
             // listCustomers
@@ -134,7 +132,7 @@ namespace Customers
             this.btnView.UseVisualStyleBackColor = false;
             this.btnView.Click += new System.EventHandler(this.btnView_Click);
             // 
-            // MainManage
+            // Manage_Customers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.ClientSize = new System.Drawing.Size(828, 666);
@@ -146,7 +144,7 @@ namespace Customers
             this.Controls.Add(this.editCustomerBtn);
             this.Controls.Add(this.btnCreateCust);
             this.Controls.Add(this.listCustomers);
-            this.Name = "MainManage";
+            this.Name = "Manage_Customers";
             this.Text = "Manage Customers";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ManageCust_FormClosing);
             this.Controls.SetChildIndex(this.listCustomers, 0);
@@ -157,8 +155,6 @@ namespace Customers
             this.Controls.SetChildIndex(this.btn_SearchCustomer, 0);
             this.Controls.SetChildIndex(this.btn_backmm, 0);
             this.Controls.SetChildIndex(this.btnView, 0);
-            //((System.ComponentModel.ISupportInitialize)(this.accBinding)).EndInit();
-            //((System.ComponentModel.ISupportInitialize)(this.accBinding2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

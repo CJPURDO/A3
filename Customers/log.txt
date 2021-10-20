@@ -1,0 +1,1 @@
+{"message":"Invalid triple slash comment is ignored: <!-- Badly formed XML comment ignored for member \"F:Customers.Controller.control\" -->\r\n","source":"MetadataCommand.ExtractMetadata","date_time":"2021-10-20T03:32:31.9014399Z","message_severity":"warning","correlation_id":"FBF1F1DC-19C9-43C4-84E8-9F187BB1FB08.1.1.9"}

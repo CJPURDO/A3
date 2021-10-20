@@ -14,10 +14,24 @@ namespace Customers
 {
     public partial class Manage_Customers : Customers.BaseForm
     {
+
+        protected BindingSource custBinding = new BindingSource();
         public Manage_Customers()
         {
             InitializeComponent();
             DisplayCust();
+
+
+
+
+            custBinding.DataSource = Controller.customers;
+            listCustomers.DataSource = custBinding;
+            listCustomers.DisplayMember = "IdFullName";
+            listCustomers.ValueMember = "ID";
+            searchCustTextBox.SelectionStart = 0;
+
+
+
         }
 
         public void DisplayCust()
@@ -89,7 +103,7 @@ namespace Customers
 
         private void btn_SearchCustomer_Click(object sender, EventArgs e)
         {
-            if (System.Text.RegularExpressions.Regex.IsMatch(searchCustTextBox.Text, "^[0-9]*$"))
+            if (!System.Text.RegularExpressions.Regex.IsMatch(searchCustTextBox.Text, "^[0-9]*$"))
             {
                 MessageBox.Show("Please enter valid Customer ID.");
                 searchCustTextBox.Text = searchCustTextBox.Text.Remove(searchCustTextBox.Text.Length - 1);
@@ -102,6 +116,7 @@ namespace Customers
                 searchCustTextBox.Text = "Enter Customer ID...";
             }
         }
+
 
         private void searchEnter(object sender, EventArgs e)
         {
@@ -126,6 +141,11 @@ namespace Customers
         private void ManageCust_FormClosing(object sender, FormClosingEventArgs e)
         {
             control.Save();
+        }
+
+        private void custTextChange(object sender, EventArgs e)
+        {
+
         }
     }
 }

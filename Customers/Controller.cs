@@ -8,18 +8,33 @@ using System.Threading.Tasks;
 
 namespace Customers
 {
-    
+    //Controller element of the MVC design pattern application
+    //Responds to user inputs and interacts with Customer Account data model objects
+
+    /// <summary>
+    /// Povides functionality between the user-facing interfaces and the 
+    /// object and serialization classes of the application
+    /// Provides methods for access to the Accounts and Customer classes instances
+    /// CRUD object functionality and persists storage application
+    /// </summary>
+    [Serializable]
     public class Controller
     {
         //Static list of customers for program-wide storage
         public static List<Customer> customers = new List<Customer>();
 
+        //Static customer variable across program
         public static Customer c;
 
 
 
-        //Singleton instance of controller type
+        //Singleton pattern restricts class instantiation to 'single' one
+        /// <summary>
+        /// This is a singleton pattern return for an instance of the controller class
+        /// </summary>
+        /// <returns>Instance of controller</returns>
         public static Controller control = new Controller();
+        
         private Controller() { }
 
         public static Controller GetControlInstance()
@@ -34,44 +49,73 @@ namespace Customers
 
 
         //Create account
+        /// <summary>
+        /// Adds an account to a customers account list
+        /// </summary>
+        /// <param name="c">Customer</param>
+        /// <param name="accType">Type of Account</param>
+        /// <param name="openBalance">Opening Balance of account</param>
+        /// <param name="intRate">Interest rate</param>
+        /// <param name="fees">Fee Amount for account</param>
+        /// <param name="overdraft">Overdraft limit for account</param>
         public void CreateAccount(Customer c, string accType, double openBalance, double intRate, double fees, double overdraft)
         {
-
             double minusOverdraft = overdraft - (overdraft * 2);
-
             if (accType == "E") { c.myAccounts.Add(new Everyday(openBalance, intRate, fees)); }
             else if (accType == "I") { c.myAccounts.Add(new Investment(openBalance, intRate, fees)); }
             else if (accType == "O") { c.myAccounts.Add(new Omni(openBalance, intRate, fees, minusOverdraft)); }
         }
 
-
-
+        //Retrieve customer's list of accounts
+        /// <summary>
+        /// Retrieve the Accounts of the selected customer
+        /// </summary>
+        /// <returns>The Account list of the selected customer</returns>
         public List<Account> GetAccountsList()
         {
             return c.myAccounts;
         }
 
 
-
         //Account information
-        public string AccInfo(Account selectedAcc)
+        /// <summary>
+        /// Returns information of account
+        /// </summary>
+        /// <param name="a">The account</param>
+        public string AccInfo(Account a)
         {
-            return selectedAcc.Info();
+            return a.Info();
         }
 
         //Account Balance
-        public string AccBal(Account selectedAcc)
+        /// <summary>
+        /// Returns account balance
+        /// </summary>
+        /// <param name="a">The account</param>
+        public string AccBal(Account a)
         {
-            return "Balance $" + selectedAcc.Balance + " ;";
+            return "Balance $" + a.Balance + " ;";
         }
 
         //Deposit
-        public void AccDeposit(Account selectedAcc, double amount)
+        /// <summary>
+        /// Deposits an amount into a customers account
+        /// </summary>
+        /// <param name="a">The account</param>
+        /// <param name="amount">Amount to be deposited</param> 
+        public void AccDeposit(Account a, double amount)
         {
-            selectedAcc.Deposit(amount);
+            a.Deposit(amount);
         }
 
-        //Transfer
+        //Transfer between accounts
+        /// <summary>
+        /// Transfers from one account to another
+        /// </summary>
+        /// <param name="from">The account to transfer from</param>
+        /// <param name="to">The account to transfer to</param>
+        /// <param name="amount">The amount to transfer</param>
+        /// <param name="charge">The charge rate of the customer</param>
         public void AccTransfer(Account from, Account to, double amount, double charge)
         {
             from.Withdraw(amount, charge);
@@ -79,32 +123,58 @@ namespace Customers
         }
 
         //Withdraw
-        public void AccWithdraw(Account selectedAcc, double amount, double charge)
+        /// <summary>
+        /// Withdraw from an account. Will apply a fee if the funds are insufficient
+        /// </summary>
+        /// <param name="a">The account</param>
+        /// <param name="amount">Amount to withdraw</param>
+        /// <param name="charge">The charge rate ofthe customer type</param>
+        ///<exception cref="FailedWithdrawalException">Thrown if funds are less than amount withdrawn, or if overdraft is exceeded</exception>
+        public void AccWithdraw(Account a, double amount, double charge)
         {
-            selectedAcc.Withdraw(amount, charge);
+            a.Withdraw(amount, charge);
         }
 
         //Calculate Interest
-        public void AccCalcInt(Account selectedAcc)
+        /// <summary>
+        /// Calculates interest of account based on its interest rate
+        /// </summary>
+        /// <param name="a">The account</param>
+        public void AccCalcInt(Account a)
         {
-            selectedAcc.CalcInterest();
+            a.CalcInterest();
         }
 
         //Add Interest
-        public void AccAddInt(Account selectedAcc)
+        /// <summary>
+        /// Adds calculated interest to account
+        /// </summary>
+        /// <param name="a">The account</param>
+        public void AccAddInt(Account a)
         {
-            selectedAcc.AddInterest();
+            a.AddInterest();
         }
 
-        
+
 
         //Delete account
+        /// <summary>
+        /// Deletes an Account
+        /// </summary>
+        /// <param name="a">The account to delete</param>
         public void DeleteAccount(Account a)
         {
             c.myAccounts.Remove(a);
         }
 
-        //Search account by ID
+
+
+        //Search account by ID number
+        /// <summary>
+        /// Search for account ID
+        /// </summary>
+        /// <param name="accID">The account ID number to search</param>
+        /// <returns>An account if found, null if not</returns>
         public Account SearchAccount(int accID)
         {
             foreach (Account a in c.myAccounts)
@@ -121,24 +191,31 @@ namespace Customers
 
 
 
-
-
-
-
-
         //Set selected customer
+        /// <summary>
+        /// Sets the static variable for selected customer c
+        /// </summary>
+        /// <param name="cust">Selected customer</param>
         public void SetCustomer(Customer cust)
         {
             c = cust;
         }
 
         //Return selected customer
+        /// <summary>
+        /// Returns the currently selectedcustomer
+        /// </summary>
+        /// <returns>Selected customer</returns>
         public Customer GetCustomer()
         {
             return c;
         }
 
         //Customer information
+        /// <summary>
+        /// Returns customer information
+        /// </summary>
+        /// <returns>Selected customer information</returns>
         public string CustInfo(Customer c)
         {
             return c.ID + " " + c.FirstName + " " + c.LastName +
@@ -147,17 +224,32 @@ namespace Customers
         }
 
         //Create customer
+        /// <summary>
+        /// This method creates a customer object
+        /// </summary>
+        /// <param name="firstna">Customer First Name</param>
+        /// <param name="lastna">Customer Last Name</param>
+        /// <param name="phone">Customer Phone number</param>
+        /// <param name="charge">Customer charge rate - staff 0.5, customer 1.0</param>
         public void CreateCustomer(string firstna, string lastna, string phone, double charge)
         {
             customers.Add(new Customer(firstna, lastna, phone, charge));
         }
 
         //Update customer
-        public void UpdateCustomer(Customer obj, string firstna, string lastna, string phone, double charge)
+        /// <summary>
+        /// Enables the editing of customer attributes
+        /// </summary>
+        /// <param name="c">Customer to be updated</param>     
+        /// <param name="firstna">Customer First Name</param>
+        /// <param name="lastna">Customer Last Name</param>
+        /// <param name="phone">Customer contact number</param>
+        /// <param name="charge">Customer charge rate</param>
+        public void UpdateCustomer(Customer c, string firstna, string lastna, string phone, double charge)
         {
-            foreach (Customer c in customers)
+            foreach (Customer cust in customers)
             {
-                if (obj == c)
+                if (c == cust)
                 {
                     c.FirstName = firstna;
                     c.LastName = lastna;
@@ -168,12 +260,21 @@ namespace Customers
         }
 
         //Delete customer
+        /// <summary>
+        /// Deletes a customer
+        /// </summary>
+        /// <param name="c">The customer to delete</param>
         public void DeleteCustomer(Customer c)
         {
             customers.Remove(c);
         }
 
         //Search customer by ID
+        /// <summary>
+        /// Finds a customer based upon thier ID number
+        /// </summary>
+        /// <param name="custID">Customer Number</param>
+        /// <returns></returns>
         public Customer SearchCustomer(int custID)
         {
             foreach (Customer c in customers)
@@ -187,12 +288,21 @@ namespace Customers
         }
 
 
+        //public Customer FindPublicationByTitle(int id)
+        //{
+        //    foreach (Customer c in customers)
+        //    {
+        //        if (c.ID == id) { return c; }
+        //    }
+        //    return null;  //we will look at unhappy paths in the next unit. 
+        //}
 
 
 
 
 
-        // controls for saving data 
+
+        // Controls for saving data 
 
         /// <summary>
         /// Saves Customer Data to file
@@ -256,7 +366,7 @@ namespace Customers
         }
 
 
-        // write the nextID attribute to file by saving the instance of singletondata
+        // Write the nextID attribute to file by saving the instance of singletondata
         /// <summary>
         /// Save the nextID value tofile
         /// </summary>
@@ -277,7 +387,7 @@ namespace Customers
         }
 
         /// <summary>
-        /// Save all data - used upon closing the app
+        /// Save data
         /// </summary>
         public void Save()
         {
