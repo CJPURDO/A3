@@ -12,7 +12,7 @@ namespace Customers
     
     public abstract class Account
     {
-        protected static int nextID = 1;
+        //protected static int nextID = 1;
         protected int id;
         protected string accountType;
         protected double balance;
@@ -72,8 +72,7 @@ namespace Customers
         //overloading constructors hierarchy
         public Account()
         {
-            id = nextID;
-            nextID++;
+            id = SingletonData.NextId;
         }
         public Account(double openBalance) : this()
         {
@@ -165,7 +164,8 @@ namespace Customers
 
         public override void AddInterest()
         {
-            lastTransaction = "No Interest on this Account; ";
+            lastTransaction = "Interest Added: $" + CalcInterest() + "; ";
+            balance = balance + CalcInterest();
         }
 
     }

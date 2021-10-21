@@ -288,19 +288,6 @@ namespace Customers
         }
 
 
-        //public Customer FindPublicationByTitle(int id)
-        //{
-        //    foreach (Customer c in customers)
-        //    {
-        //        if (c.ID == id) { return c; }
-        //    }
-        //    return null;  //we will look at unhappy paths in the next unit. 
-        //}
-
-
-
-
-
 
         // Controls for saving data 
 
@@ -393,6 +380,11 @@ namespace Customers
         {
             WriteBinaryData();
             WriteID();
+
         }
+
+
+       
+
     }
 }

@@ -22,7 +22,9 @@ namespace Customers
             listSelectAcc.DisplayMember = "IdTypeBalance";
             listSelectAcc.ValueMember = "Id";
 
-        }
+        
+
+    }
 
         public void updateReset()
         {
@@ -91,6 +93,8 @@ namespace Customers
 
         private void depositBtn_Click(object sender, EventArgs e)
         {
+            
+            
             if (System.Text.RegularExpressions.Regex.IsMatch(amountInputBox.Text, pattern))
             {
                 double amount = Convert.ToDouble(amountInputBox.Text);
