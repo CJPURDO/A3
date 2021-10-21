@@ -289,7 +289,7 @@ namespace Customers
 
 
 
-        // Controls for saving data 
+        // Controller saving data 
 
         /// <summary>
         /// Saves Customer Data to file
@@ -316,7 +316,6 @@ namespace Customers
         /// </summary>
         public void ReadBinaryData()
         {
-
             IFormatter formatter = new BinaryFormatter();
             Stream stream = new FileStream("Objects.bin", FileMode.Open, FileAccess.Read,
             FileShare.Read);
@@ -337,7 +336,7 @@ namespace Customers
         }
 
 
-        //Get the saved value of nextID if there is one
+        //Get the nextID saved value
         /// <summary>
         /// Get the stored nextID value from file
         /// </summary>
@@ -349,7 +348,6 @@ namespace Customers
 
             SingletonData.setInstance((SingletonData)formatter.Deserialize(stream));
             stream.Close();
-
         }
 
 
@@ -376,15 +374,12 @@ namespace Customers
         /// <summary>
         /// Save data
         /// </summary>
+        /// 
         public void Save()
         {
             WriteBinaryData();
             WriteID();
-
         }
-
-
-       
 
     }
 }
