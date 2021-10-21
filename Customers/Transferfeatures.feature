@@ -94,7 +94,7 @@ Scenario: Transfer funds from Omni to Omni
 	And the other Omni account will hold 150
 
 	@mytag
-Scenario: Transfer funds with enough balance plus overdraft limit to complete transaction
+Scenario: Transfer funds with sufficient balance plus overdraft limit to complete transaction
 	Given the first account is Omni
 	And the Omni balance is 100
 	And the Omni overdraft limit is 100
@@ -105,7 +105,7 @@ Scenario: Transfer funds with enough balance plus overdraft limit to complete tr
 	And the Investment account will hold 250
 
 	@mytag
-Scenario: Transfer funds with not enough balance plus overdraft limit to complete transaction
+Scenario: Transfer funds with insufficient balance plus overdraft limit to complete transaction
 	Given the first account is Omni
 	And the Omni balance is 100
 	And the Omni overdraft limit is 100
@@ -116,7 +116,7 @@ Scenario: Transfer funds with not enough balance plus overdraft limit to complet
 	And the Investment account will hold 50
 
 	@mytag
-Scenario: Transfer insufficent funds to complete transaction as a bank staff member
+Scenario: Transfer insufficient funds to complete transfer as a bank staff
 	Given the first account is Everyday
 	And the Everday balance is 100
 	And the second account is Investment
@@ -126,7 +126,7 @@ Scenario: Transfer insufficent funds to complete transaction as a bank staff mem
 	And the Investment account will hold 50
 
 	@mytag
-Scenario: Transfer insufficent funds to complete transaction as a non bank staff member
+Scenario: Transfer insufficient funds to complete transfer as a non bank staff 
 	Given the first account is Everyday
 	And the Everday balance is 100
 	And the second account is Investment

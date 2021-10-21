@@ -549,14 +549,16 @@ this.ScenarioInitialize(scenarioInfo);
             this.ScenarioCleanup();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Transfer funds with enough balance plus overdraft limit to complete transaction", new string[] {
+        [TechTalk.SpecRun.ScenarioAttribute("Transfer funds with sufficient balance plus overdraft limit to complete transacti" +
+            "on", new string[] {
                 "mytag"}, SourceLine=96)]
-        public virtual void TransferFundsWithEnoughBalancePlusOverdraftLimitToCompleteTransaction()
+        public virtual void TransferFundsWithSufficientBalancePlusOverdraftLimitToCompleteTransaction()
         {
             string[] tagsOfScenario = new string[] {
                     "mytag"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Transfer funds with enough balance plus overdraft limit to complete transaction", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Transfer funds with sufficient balance plus overdraft limit to complete transacti" +
+                    "on", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 97
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -605,16 +607,16 @@ this.ScenarioInitialize(scenarioInfo);
             this.ScenarioCleanup();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Transfer funds with not enough balance plus overdraft limit to complete transacti" +
-            "on", new string[] {
+        [TechTalk.SpecRun.ScenarioAttribute("Transfer funds with insufficient balance plus overdraft limit to complete transac" +
+            "tion", new string[] {
                 "mytag"}, SourceLine=107)]
-        public virtual void TransferFundsWithNotEnoughBalancePlusOverdraftLimitToCompleteTransaction()
+        public virtual void TransferFundsWithInsufficientBalancePlusOverdraftLimitToCompleteTransaction()
         {
             string[] tagsOfScenario = new string[] {
                     "mytag"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Transfer funds with not enough balance plus overdraft limit to complete transacti" +
-                    "on", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Transfer funds with insufficient balance plus overdraft limit to complete transac" +
+                    "tion", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 108
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -663,14 +665,14 @@ this.ScenarioInitialize(scenarioInfo);
             this.ScenarioCleanup();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Transfer insufficent funds to complete transaction as a bank staff member", new string[] {
+        [TechTalk.SpecRun.ScenarioAttribute("Transfer insufficient funds to complete transfer as a bank staff", new string[] {
                 "mytag"}, SourceLine=118)]
-        public virtual void TransferInsufficentFundsToCompleteTransactionAsABankStaffMember()
+        public virtual void TransferInsufficientFundsToCompleteTransferAsABankStaff()
         {
             string[] tagsOfScenario = new string[] {
                     "mytag"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Transfer insufficent funds to complete transaction as a bank staff member", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Transfer insufficient funds to complete transfer as a bank staff", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 119
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -716,14 +718,14 @@ this.ScenarioInitialize(scenarioInfo);
             this.ScenarioCleanup();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Transfer insufficent funds to complete transaction as a non bank staff member", new string[] {
+        [TechTalk.SpecRun.ScenarioAttribute("Transfer insufficient funds to complete transfer as a non bank staff", new string[] {
                 "mytag"}, SourceLine=128)]
-        public virtual void TransferInsufficentFundsToCompleteTransactionAsANonBankStaffMember()
+        public virtual void TransferInsufficientFundsToCompleteTransferAsANonBankStaff()
         {
             string[] tagsOfScenario = new string[] {
                     "mytag"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Transfer insufficent funds to complete transaction as a non bank staff member", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Transfer insufficient funds to complete transfer as a non bank staff", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 129
 this.ScenarioInitialize(scenarioInfo);
 #line hidden

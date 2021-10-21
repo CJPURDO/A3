@@ -255,12 +255,6 @@ references:
   isSpec: "True"
   fullName: Customers.Account.LastTransaction
   nameWithType: Account.LastTransaction
-- uid: Customers.Account.nextID
-  name: nextID
-  href: api/Customers.Account.html#Customers_Account_nextID
-  commentId: F:Customers.Account.nextID
-  fullName: Customers.Account.nextID
-  nameWithType: Account.nextID
 - uid: Customers.Account.Withdraw(System.Double,System.Double)
   name: Withdraw(Double, Double)
   href: api/Customers.Account.html#Customers_Account_Withdraw_System_Double_System_Double_

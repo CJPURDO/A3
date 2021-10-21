@@ -12,10 +12,10 @@ namespace Customers
     //Responds to user inputs and interacts with Customer Account data model objects
 
     /// <summary>
-    /// Povides functionality between the user-facing interfaces and the 
-    /// object and serialization classes of the application
-    /// Provides methods for access to the Accounts and Customer classes instances
-    /// CRUD object functionality and persists storage application
+    /// Provides core functions between the user interfaces and the 
+    /// object and serialization classes of the application.
+    /// Provides methods for access to the Accounts and Customer classes instances.
+    /// CRUD object functionality and persists storage application.
     /// </summary>
     [Serializable]
     public class Controller
